@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "./language-switcher";
+import { Logo } from "./logo";
 import { useAssessment } from "@/components/assessment/assessment-context";
 import { scrollToWaitlist } from "@/lib/scroll";
 
@@ -45,11 +46,8 @@ export function Navbar() {
       )}
     >
       <nav className="container-page flex min-h-[76px] items-center justify-between gap-6">
-        <a href="#top" className="flex items-center gap-2.5 font-extrabold">
-          <span className="grid h-11 w-11 place-items-center rounded-2xl bg-accent text-bg">
-            EM
-          </span>
-          <span className="text-lg tracking-tight">ELMADHI</span>
+        <a href="#top" aria-label="ELMADHI">
+          <Logo />
         </a>
 
         {/* Desktop links */}
