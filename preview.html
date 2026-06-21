@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ELMADHI</title>
+<style>
+:root{
+  --bg:#fffcf9;--white:#fff;--ink:#17201b;--muted:#68736b;
+  --orange:#ff6b19;--green:#2f8f5b;--dark:#18231d;
+  --line:#eadfd5;--soft:#fff3ea
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:Tahoma,"Segoe UI",Arial,sans-serif;line-height:1.75
+}
+button,a{font:inherit}
+.container{width:min(1160px,calc(100% - 32px));margin:auto}
+nav{
+  position:sticky;top:0;z-index:20;background:#fffcf9eF;
+  backdrop-filter:blur(15px);border-bottom:1px solid var(--line)
+}
+.nav-inner{
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:25px
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900}
+.logo{
+  width:46px;height:46px;border-radius:14px;background:var(--orange);
+  color:#fff;display:grid;place-items:center;font-size:19px
+}
+.links{display:flex;align-items:center;gap:22px}
+.links a{text-decoration:none;color:var(--ink);font-size:14px;font-weight:700}
+.btn{
+  border:0;border-radius:999px;padding:14px 23px;background:var(--green);
+  color:white;font-weight:900;cursor:pointer;box-shadow:0 10px 28px #2f8f5b35;
+  transition:.2s
+}
+.btn:hover{transform:translateY(-2px)}
+.hero{padding:72px 0 95px}
+.hero-grid{
+  display:grid;grid-template-columns:1.03fr .97fr;
+  align-items:center;gap:65px
+}
+.eyebrow,.kicker{
+  color:var(--orange);font-size:12px;font-weight:900;letter-spacing:1.5px
+}
+h1{
+  font-size:clamp(42px,5.3vw,74px);line-height:1.2;
+  letter-spacing:-2px;margin:10px 0 22px
+}
+.hero-copy{font-size:19px;color:#455149;margin-bottom:28px}
+.hero-media{
+  height:610px;border-radius:42px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 28%,#f1ba91 0 12%,transparent 13%),
+    radial-gradient(ellipse at 50% 69%,#c98155 0 22%,transparent 23%),
+    linear-gradient(140deg,#101813,#334138);
+  box-shadow:0 25px 70px #3e261a25
+}
+.hero-media:before{
+  content:"صورتك الرئيسية";position:absolute;inset:auto 20px 20px;
+  padding:12px;border:1px dashed #ffffff55;border-radius:15px;
+  color:#fff;text-align:center;font-weight:800
+}
+.badge{
+  position:absolute;background:white;border:1px solid var(--line);
+  border-radius:18px;padding:13px 17px;font-weight:800;
+  box-shadow:0 15px 45px #0002
+}
+.badge.one{top:42px;right:18px}
+.badge.two{bottom:75px;left:18px}
+.section{padding:95px 0}
+.alt{background:#fff6ef}
+.heading{text-align:center;max-width:760px;margin:0 auto 45px}
+.heading h2{
+  font-size:clamp(31px,4vw,50px);line-height:1.3;margin:8px 0
+}
+.heading p{color:var(--muted);font-size:17px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.card{
+  background:white;border:1px solid var(--line);
+  border-radius:23px;padding:25px
+}
+.number{
+  width:42px;height:42px;border-radius:13px;background:#fff0e7;
+  color:var(--orange);display:grid;place-items:center;font-weight:900;
+  margin-bottom:25px
+}
+.card p{font-weight:800;margin:0}
+.statement{
+  max-width:870px;margin:28px auto 0;padding:23px 30px;
+  background:var(--dark);color:#fff;text-align:center;
+  border-radius:23px;font-size:20px;font-weight:900
+}
+.solution{
+  display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:center
+}
+.dark-card{
+  background:linear-gradient(145deg,#17221c,#2b3b31);
+  border-radius:32px;padding:40px;color:#fff;min-height:430px
+}
+.dark-card h2{font-size:39px;line-height:1.3;margin:10px 0}
+.dark-card p{color:#cad5cd;font-size:17px}
+.checks{display:grid;gap:12px}
+.check{
+  display:flex;align-items:center;gap:13px;background:#fff;
+  border:1px solid var(--line);border-radius:17px;padding:16px;font-weight:800
+}
+.check i{
+  font-style:normal;width:31px;height:31px;border-radius:50%;
+  display:grid;place-items:center;background:#def3e6;color:var(--green)
+}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.feature{
+  background:#fff;border:1px solid var(--line);border-radius:22px;
+  padding:24px;transition:.2s
+}
+.feature:hover{transform:translateY(-5px);box-shadow:0 20px 50px #40261012}
+.icon{
+  width:47px;height:47px;border-radius:14px;background:#fff0e7;
+  display:grid;place-items:center;font-size:22px
+}
+.feature h3{font-size:17px;margin:17px 0 7px}
+.feature p{color:var(--muted);font-size:14px;margin:0}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.step{
+  background:#fff;border:1px solid var(--line);
+  border-radius:21px;padding:22px
+}
+.step b{color:var(--orange);font-size:13px}
+.step h3{font-size:17px;line-height:1.5;margin:30px 0 8px}
+.step p{color:var(--muted);font-size:13px;margin:0}
+.qa{
+  background:var(--dark);color:#fff;border-radius:34px;padding:48px;
+  display:grid;grid-template-columns:.9fr 1.1fr;gap:50px
+}
+.qa h2{font-size:42px;line-height:1.3;margin:8px 0}
+.qa p{color:#c7d2ca}
+.questions{display:grid;gap:10px}
+.question{
+  background:#223128;border:1px solid #3c4e42;
+  padding:16px 18px;border-radius:14px;
+  display:flex;justify-content:space-between;gap:12px;font-weight:700
+}
+.question b{color:#9ce4b3}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.gallery{
+  display:grid;grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr .72fr;gap:11px;height:560px
+}
+.photo{
+  display:grid;place-items:center;border-radius:23px;color:#fff;
+  font-weight:900;text-align:center;padding:15px;
+  background:linear-gradient(145deg,#2f3b34,#131a16)
+}
+.photo.after{background:linear-gradient(145deg,#ff9a58,#cf4d00)}
+.photo.tkd{
+  grid-column:1/3;background:linear-gradient(145deg,#334d62,#17232c)
+}
+.story h2{font-size:44px;line-height:1.3;margin:8px 0}
+.story p{font-size:17px;color:#4f5b53}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{
+  background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:7px 12px;font-size:13px;font-weight:800
+}
+.pricing{
+  display:grid;grid-template-columns:1fr .9fr;gap:50px;align-items:center;
+  padding:50px;border:1px solid #f0d7c5;border-radius:35px;
+  background:linear-gradient(145deg,#fff0e4,#fff)
+}
+.price{font-size:68px;line-height:1;color:var(--orange);font-weight:900}
+.price small{font-size:17px;color:var(--ink)}
+.old{text-decoration:line-through;color:#999;font-weight:800}
+.includes{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:22px}
+.includes div{
+  background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:10px;font-size:13px;font-weight:700
+}
+.payment{
+  padding:34px;background:var(--dark);color:#fff;border-radius:25px
+}
+.payment p{color:#cbd4ce}
+.payment .btn{width:100%}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted)}
+.modal{
+  display:none;position:fixed;inset:0;z-index:50;background:#101712c9;
+  place-items:center;padding:17px
+}
+.modal.open{display:grid}
+.modal-card{
+  width:min(640px,100%);max-height:92vh;overflow:auto;
+  background:var(--bg);border-radius:27px;padding:28px
+}
+.modal-top{display:flex;justify-content:space-between;align-items:center}
+.close{
+  width:38px;height:38px;border:0;border-radius:50%;
+  background:#eee3da;cursor:pointer;font-size:20px
+}
+.progress{height:7px;background:#eee3da;border-radius:99px;margin:20px 0}
+.bar{height:100%;width:16%;background:var(--orange);border-radius:99px}
+.options{display:grid;gap:9px}
+.option{
+  padding:14px;border:1px solid var(--line);background:#fff;
+  border-radius:13px;text-align:right;cursor:pointer;font-weight:700
+}
+.option:hover{border-color:var(--orange);background:#fff3eb}
+.result{text-align:center;display:none}
+.result-mark{
+  width:105px;height:105px;border-radius:50%;margin:15px auto;
+  background:#def3e6;color:var(--green);display:grid;place-items:center;
+  font-size:24px;font-weight:900
+}
+.d17{
+  background:var(--dark);color:#fff;border-radius:20px;
+  padding:18px;text-align:center;font-size:30px;font-weight:900;direction:ltr
+}
+.upload{
+  margin:18px 0;padding:25px;border:2px dashed #d7c8bd;
+  background:#fff;border-radius:17px;text-align:center;color:var(--muted)
+}
+.mobile-cta{display:none}
+@media(max-width:900px){
+  .links{display:none}
+  .hero-grid,.solution,.qa,.story,.pricing{grid-template-columns:1fr}
+  .hero-media{height:520px;order:-1}
+  .grid4,.features{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:last-child{grid-column:1/3}
+  .mobile-cta{
+    display:block;position:fixed;z-index:19;bottom:13px;left:15px;right:15px
+  }
+  .mobile-cta .btn{width:100%}
+}
+@media(max-width:560px){
+  .section{padding:68px 0}
+  .hero{padding:38px 0 65px}
+  h1{font-size:39px;letter-spacing:-1px}
+  .hero-copy{font-size:16px}
+  .hero-media{height:430px}
+  .grid4,.features,.steps,.includes{grid-template-columns:1fr}
+  .step:last-child{grid-column:auto}
+  .qa,.pricing{padding:27px}
+  .qa h2,.story h2{font-size:33px}
+  .gallery{height:420px}
+  .statement{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="brand"><span class="logo">EM</span> ELMADHI</div>
+    <div class="links">
+      <a href="#problem">المشكلة</a>
+      <a href="#inside">داخل المنصّة</a>
+      <a href="#story">التجربة</a>
+      <a href="#price">السعر</a>
+      <button class="btn open-quiz">اكتشف بدنك مجّاناً</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">افهم بدنك • كوّتش روحك</span>
+      <h1>مش تبقى حياتك لكل تخلص في coach ؟</h1>
+      <p class="hero-copy">
+        مع <b>ELMADHI</b> إنت الكوتش متاع روحك و باش تفهم شنوة يحتاج بدنك،
+        كيفاش تتمرّن وشنوة تاكل، على حساب هدفك، حياتك وخدمتك.
+        كل شيء بسهولة ومن غير تعقيد.
+      </p>
+      <button class="btn open-quiz">اكتشف شنوة يحتاج بدنك — ببلاش</button>
+    </div>
+
+    <div class="hero-media">
+      <div class="badge one">● برنامج على قياسك</div>
+      <div class="badge two">Gym ولا Home Workout 🏠</div>
+    </div>
+  </div>
+</header>
+
+<section class="section alt" id="problem">
+  <div class="container">
+    <div class="heading">
+      <span class="kicker">المشكلة</span>
+      <h2>كل نهار معلومة جديدة… وإنت مازلت موش عارف الصحيح</h2>
+    </div>
+
+    <div class="grid4">
+      <article class="card"><span class="number">01</span><p>تبدّل في البرنامج كل أسبوع وما تعرفش شنوّة الصحيح؟</p></article>
+      <article class="card"><span class="number">02</span><p>تتمرّن وتتعب، أمّا النتيجة ما تجيش؟</p></article>
+      <article class="card"><span class="number">03</span><p>ما تعرفش قداش تاكل وشنوّة يحتاج بدنك؟</p></article>
+      <article class="card"><span class="number">04</span><p>تخلّص في كوتش، وبعد ما توقّف ترجع تضيع وترجع للصفر؟</p></article>
+    </div>
+
+    <div class="statement">
+      المشكلة موش فيك. المشكلة في السيستام اللي خلاّك تتبّع من غير ما تفهم علاش.
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container solution">
+    <article class="dark-card">
+      <span class="kicker">الحل</span>
+      <h2>الحل موش برنامج آخر… الحل إنّك تفهم بدنك</h2>
+      <p>ELMADHI يسألك على بدنك، هدفك، وقتك وحياتك، وبعد يعطيك الطريق اللي تناسبك.</p>
+      <p><b>ماكش باش تتبّع وخلاص… باش تفهم وتقرّر وحدك.</b></p>
+    </article>
+
+    <div class="checks">
+      <div class="check"><i>✓</i> الهدف المناسب ليك</div>
+      <div class="check"><i>✓</i> السعرات والـMacros متاعك</div>
+      <div class="check"><i>✓</i> برنامج تمرين على حساب وقتك</div>
+      <div class="check"><i>✓</i> Diet plan يناسب أكلك وحياتك</div>
+      <div class="check"><i>✓</i> تفسير واضح علاش اخترنالك كل حاجة</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="inside">
+  <div class="container">
+    <div class="heading">
+      <span class="kicker">داخل ELMADHI</span>
+      <h2>كل الأدوات اللي تحتاجها، في بلاصة وحدة</h2>
+      <p>راجل ولا مرأة، Gym ولا دار—المنصّة تتأقلم معاك.</p>
+    </div>
+
+    <div class="features">
+      <article class="feature"><div class="icon">◎</div><h3>تحليل كامل لبدنك</h3><p>نفهمو وضعك وهدفك قبل كل شيء.</p></article>
+      <article class="feature"><div class="icon">🏋</div><h3>Workout plan على قياسك</h3><p>حسب مستواك، وقتك والمعدّات المتوفرة.</p></article>
+      <article class="feature"><div class="icon">🥗</div><h3>Diet plan يناسب حياتك</h3><p>سعرات، Macros وأكل تنجم تلتزم بيه.</p></article>
+      <article class="feature"><div class="icon">↗</div><h3>Workout tracker</h3><p>سجّل sets، reps والأوزان وشوف تقدّمك.</p></article>
+      <article class="feature"><div class="icon">◴</div><h3>Nutrition tracker</h3><p>تابع أكلك وسعراتك كل يوم.</p></article>
+      <article class="feature"><div class="icon">♀</div><h3>خاص بالنساء</h3><p>تعديل التمرين والأكل حسب مراحل الدورة.</p></article>
+      <article class="feature"><div class="icon">?</div><h3>Q&A يتجدّد</h3><p>إجابات واضحة وسهلة تتضاف كل أسبوع.</p></article>
+      <article class="feature"><div class="icon">✉</div><h3>10 أسئلة شخصية</h3><p>اسأل ELMADHI مباشرة على حالتك.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="heading">
+      <span class="kicker">كيفاش تخدم؟</span>
+      <h2>من أول سؤال لأول plan… الطريق واضحة</h2>
+    </div>
+
+    <div class="steps">
+      <article class="step"><b>01</b><h3>الاختبار المجّاني</h3><p>نعرفو هدف بدنك والسعرات والـMacros.</p></article>
+      <article class="step"><b>02</b><h3>ادخل للمنصّة</h3><p>خلّص عبر D17 وارفع إثبات الدفع.</p></article>
+      <article class="step"><b>03</b><h3>كمّل الـAssessment</h3><p>بدنك، خبرتك، وقتك، أكلك ومعدّاتك.</p></article>
+      <article class="step"><b>04</b><h3>خطّتك بعد ساعة</h3><p>Workout وDiet مع تفسير كل اختيار.</p></article>
+      <article class="step"><b>05</b><h3>تقدّم وتعديل</h3><p>Check-in جديد والمنصّة تعدّل برنامجك.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container qa">
+    <div>
+      <span class="kicker">عندك سؤال؟</span>
+      <h2>كل سؤال عندو إجابة واضحة</h2>
+      <p>
+        سواء بديت تتمرّن اليوم، عندك مدّة في الـGym، تتمرّن في الدار،
+        راجل ولا مرأة… تلقى المعلومة بطريقة بسيطة، صحيحة وسهلة التطبيق.
+      </p>
+      <button class="btn open-quiz">ابدأ بالاختبار المجّاني</button>
+    </div>
+
+    <div class="questions">
+      <div class="question"><span>كيفاش نعرف قداش نحتاج Calories؟</span><b>+</b></div>
+      <div class="question"><span>Gym ولا Home Workout؟</span><b>+</b></div>
+      <div class="question"><span>كيفاش نزيد عضلات من غير دهون برشة؟</span><b>+</b></div>
+      <div class="question"><span>كيفاش نبدّل التمرين وقت الدورة؟</span><b>+</b></div>
+      <div class="question"><span>ما لقيتش سؤالك؟ اقترحو علينا</span><b>←</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="story">
+  <div class="container story">
+    <div class="gallery">
+      <div class="photo">صورة قبل</div>
+      <div class="photo after">صورة التحوّل الطبيعي</div>
+      <div class="photo tkd">صورة Taekwondo والحزام الأسود</div>
+    </div>
+
+    <div>
+      <span class="kicker">تجربة حقيقية</span>
+      <h2>وراء ELMADHI تجربة حقيقية</h2>
+      <p>
+        بديت الرياضة سنة 2011، تمرّنت 8 سنين Taekwondo ووصلت للحزام الأسود.
+        وبعدها دخلت للـGym وبنيت بدني بطريقة طبيعية، خطوة بخطوة ومن غير كوتش.
+      </p>
+      <p>
+        في الطريق جرّبت، غلطت وتعلّمت. واليوم ما نحبّش نقلك «اعمل كيفي»،
+        نحب نعطيك الأدوات باش تلقى الطريقة اللي تناسب
+        <b>بدنك، عمرك، هدفك وحياتك</b>.
+      </p>
+      <h3>ما يلزمكش تكون رياضي محترف… يلزمك برك تعرف منين تبدأ.</h3>
+      <div class="pills">
+        <span class="pill">14 سنة رياضة</span>
+        <span class="pill">8 سنين Taekwondo</span>
+        <span class="pill">5 سنين Gym</span>
+        <span class="pill">Natural transformation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="price">
+  <div class="container pricing">
+    <div>
+      <span class="kicker">عرض الإطلاق</span>
+      <h2>تعلّم تكوّتش روحك… مرّة واحدة ولحياتك</h2>
+      <div class="price">89 DT <small>مدى الحياة</small></div>
+      <div class="old">السعر العادي 149 DT</div>
+      <p>العرض لأول 50 شخص فقط.</p>
+
+      <div class="includes">
+        <div>✓ Personal assessment</div><div>✓ Gym أو Home Workout</div>
+        <div>✓ Diet + Calories + Macros</div><div>✓ Workout & Nutrition trackers</div>
+        <div>✓ تعديل الخطّة</div><div>✓ Q&A أسبوعي</div>
+        <div>✓ محتوى خاص بالنساء</div><div>✓ 10 أسئلة شخصية</div>
+      </div>
+    </div>
+
+    <div class="payment">
+      <h2>جاهز تفهم بدنك؟</h2>
+      <p>
+        تلقى معلومات الدفع بـD17 وترفع إثبات الدفع.
+        بعد التأكيد، حسابك يتفعّل.
+      </p>
+      <button class="btn open-payment">نحب نولّي الكوتش متاع روحي</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <b>ELMADHI</b> — افهم بدنك. كوّتش روحك.
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <button class="btn open-quiz">اكتشف بدنك مجّاناً</button>
+</div>
+
+<div class="modal" id="quizModal">
+  <div class="modal-card">
+    <div class="modal-top">
+      <b>اختبار ELMADHI المجّاني</b>
+      <button class="close">×</button>
+    </div>
+
+    <div class="progress"><div class="bar" id="bar"></div></div>
+
+    <div id="quiz">
+      <span class="kicker" id="counter"></span>
+      <h2 id="question"></h2>
+      <div class="options" id="options"></div>
+    </div>
+
+    <div class="result" id="result">
+      <span class="kicker">النتيجة الأولية</span>
+      <div class="result-mark" id="goalResult">Recomp</div>
+      <h2>هدف مناسب ليك، موش Plan عشوائي</h2>
+      <p id="resultText"></p>
+      <button class="btn" id="seePlatform">اكتشف المنصّة الكاملة</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="paymentModal">
+  <div class="modal-card">
+    <div class="modal-top">
+      <b>الدفع عبر D17</b>
+      <button class="close">×</button>
+    </div>
+    <h2>89 DT — مدى الحياة</h2>
+    <p>ابعث المبلغ على الرقم:</p>
+    <div class="d17">28 605 474</div>
+    <div class="upload">
+      ⬆<br><b>ارفع Screenshot متاع الدفع</b><br>
+      <small>PNG أو JPG</small>
+    </div>
+    <button class="btn" style="width:100%">بعث إثبات الدفع</button>
+  </div>
+</div>
+
+<script>
+const quizData=[
+  ["شنوّة هدفك الأساسي؟",["ننقص دهون","نزيد عضلات","نبدّل شكل بدني الكل","نحسّن صحّتي وحركتي"]],
+  ["وين تحب تتمرّن؟",["في الـGym","في الدار","الاثنين حسب وقتي"]],
+  ["قدّاش تنجم تتمرّن في الأسبوع؟",["يومين","3 أيام","4 أيام","5 أيام أو أكثر"]],
+  ["شنوّة مستواك الحالي؟",["مازلت باش نبدأ","مبتدئ","عندي تجربة متوسطة","راجع بعد توقّف"]],
+  ["شنوّة أصعب حاجة عليك؟",["ما نعرفش شنوّة نعمل","الأكل والسعرات","الالتزام والوقت","نتمرّن وما نشوفش نتيجة"]],
+  ["تحب Plan يتأقلم مع حياتك؟",["أكيد، هذا اللي نحتاجو","نحب نفهم أكثر قبل"]]
+];
+
+let step=0;
+let answers=[];
+
+const quizModal=document.getElementById("quizModal");
+const paymentModal=document.getElementById("paymentModal");
+const quiz=document.getElementById("quiz");
+const result=document.getElementById("result");
+const question=document.getElementById("question");
+const options=document.getElementById("options");
+const counter=document.getElementById("counter");
+const bar=document.getElementById("bar");
+
+function renderQuestion(){
+  counter.textContent=`السؤال ${step+1} من ${quizData.length}`;
+  question.textContent=quizData[step][0];
+  bar.style.width=`${((step+1)/quizData.length)*100}%`;
+  options.innerHTML="";
+
+  quizData[step][1].forEach(answer=>{
+    const button=document.createElement("button");
+    button.className="option";
+    button.textContent=answer;
+    button.onclick=()=>{
+      answers.push(answer);
+      step++;
+      step<quizData.length ? renderQuestion() : showResult();
+    };
+    options.appendChild(button);
+  });
+}
+
+function showResult(){
+  quiz.style.display="none";
+  result.style.display="block";
+
+  const goal=answers[0]||"";
+  const resultType=goal.includes("دهون")
+    ?"Cut"
+    :goal.includes("عضلات")
+      ?"Build"
+      :"Recomp";
+
+  document.getElementById("goalResult").textContent=resultType;
+  document.getElementById("resultText").textContent=
+    `حسب هدفك (${goal}) والوقت المتوفر عندك، يلزمك Plan شخصي في التمرين والأكل. `+
+    `في النسخة الكاملة نسألوك على الطول، الوزن، النشاط والمعدّات ونحسبولك كل شيء بالتفصيل.`;
+}
+
+document.querySelectorAll(".open-quiz").forEach(button=>{
+  button.onclick=()=>{
+    step=0;
+    answers=[];
+    quiz.style.display="block";
+    result.style.display="none";
+    renderQuestion();
+    quizModal.classList.add("open");
+  };
+});
+
+document.querySelectorAll(".open-payment").forEach(button=>{
+  button.onclick=()=>paymentModal.classList.add("open");
+});
+
+document.querySelectorAll(".close").forEach(button=>{
+  button.onclick=()=>button.closest(".modal").classList.remove("open");
+});
+
+document.querySelectorAll(".modal").forEach(modal=>{
+  modal.onclick=event=>{
+    if(event.target===modal) modal.classList.remove("open");
+  };
+});
+
+document.getElementById("seePlatform").onclick=()=>{
+  quizModal.classList.remove("open");
+  document.getElementById("price").scrollIntoView();
+};
+</script>
+</body>
+</html>

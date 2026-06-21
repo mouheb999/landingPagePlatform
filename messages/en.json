@@ -1,0 +1,202 @@
+{
+  "brand": "ELMADHI",
+  "metadata": {
+    "title": "ELMADHI — Understand Your Body. Coach Yourself.",
+    "description": "ELMADHI is an educational fitness platform that teaches you to understand your body and become your own coach: training, nutrition, and calories tailored to your goal and your life. Join the waitlist before launch.",
+    "ogTitle": "ELMADHI — Tired of paying a coach forever?",
+    "ogDescription": "Learn to understand your body and coach yourself. A premium educational fitness platform. Join the waitlist."
+  },
+  "nav": {
+    "problem": "The Problem",
+    "inside": "Inside the Platform",
+    "story": "The Story",
+    "waitlist": "Waitlist",
+    "menu": "Menu",
+    "language": "Language"
+  },
+  "common": {
+    "joinWaitlist": "Join the Waitlist",
+    "bookSpot": "Reserve Your Spot Before Launch",
+    "freeAssessment": "Discover Your Body — Free"
+  },
+  "hero": {
+    "eyebrow": "Understand Your Body • Coach Yourself",
+    "title": "Tired of paying a coach for the rest of your life?",
+    "copy": "With ELMADHI you become your own coach. Understand what your body needs, how to train, and what to eat — based on your goal, your life, and your schedule. Simple, with zero complexity.",
+    "primaryCta": "Join the Waitlist",
+    "secondaryCta": "See How the Platform Works",
+    "assessmentCta": "Discover What Your Body Needs — Free",
+    "badgeOne": "A program built for you",
+    "badgeTwo": "Gym or Home Workout 🏠",
+    "videoLabel": "Watch the intro video"
+  },
+  "problem": {
+    "kicker": "The Problem",
+    "title": "Every day a new piece of advice… and you still don't know what's right",
+    "items": [
+      "Switching programs every week without knowing what's actually right?",
+      "Training hard, getting tired, but the results never come?",
+      "Don't know how much to eat or what your body really needs?",
+      "Pay a coach, then go back to square one the moment you stop?"
+    ],
+    "statement": "The problem isn't you. The problem is a system that made you follow without ever understanding why."
+  },
+  "solution": {
+    "kicker": "The Solution",
+    "title": "The solution isn't another program… it's understanding your body",
+    "paragraphOne": "ELMADHI asks about your body, your goal, your time, and your life — then gives you the path that fits you.",
+    "paragraphTwo": "You won't just follow blindly… you'll understand and decide for yourself.",
+    "checks": [
+      "The right goal for you",
+      "Your calories and macros",
+      "A training program around your schedule",
+      "A diet plan that fits your food and your life",
+      "Clear reasons behind every choice we make for you"
+    ]
+  },
+  "inside": {
+    "kicker": "Inside ELMADHI",
+    "title": "Every tool you need, in one place",
+    "subtitle": "Man or woman, gym or home — the platform adapts to you.",
+    "features": [
+      { "title": "Full body analysis", "desc": "We understand your situation and goal before anything else." },
+      { "title": "Custom workout plan", "desc": "Based on your level, your time, and your available equipment." },
+      { "title": "Diet plan that fits your life", "desc": "Calories, macros, and food you can actually stick to." },
+      { "title": "Workout tracker", "desc": "Log sets, reps, and weights and watch your progress." },
+      { "title": "Nutrition tracker", "desc": "Track your food and calories every day." },
+      { "title": "Built for women", "desc": "Training and nutrition adjusted to your cycle phases." },
+      { "title": "Q&A that keeps growing", "desc": "Clear, simple answers added every week." },
+      { "title": "10 personal questions", "desc": "Ask ELMADHI directly about your own situation." }
+    ]
+  },
+  "howItWorks": {
+    "kicker": "How does it work?",
+    "title": "From the first question to your first plan… the path is clear",
+    "steps": [
+      { "title": "The free assessment", "desc": "We define your body goal, calories, and macros." },
+      { "title": "Join the waitlist", "desc": "Sign up with your email to be among the first at launch." },
+      { "title": "Complete the assessment", "desc": "Your body, experience, time, food, and equipment." },
+      { "title": "Your plan within an hour", "desc": "Workout and diet, with the reason behind every choice." },
+      { "title": "Progress and adjust", "desc": "A new check-in and the platform updates your program." }
+    ]
+  },
+  "qa": {
+    "kicker": "Got a question?",
+    "title": "Every question has a clear answer",
+    "copy": "Whether you start training today, have spent time in the gym, train at home, man or woman… you'll find the information explained simply, correctly, and easy to apply.",
+    "cta": "Start the free assessment",
+    "videoLabel": "Watch a video answer",
+    "questions": [
+      "How do I know how many calories I need?",
+      "Gym or home workout?",
+      "How do I build muscle without much fat?",
+      "How do I adjust training during my cycle?",
+      "Didn't find your question? Suggest it to us"
+    ]
+  },
+  "story": {
+    "kicker": "A real journey",
+    "title": "Behind ELMADHI is a real journey",
+    "paragraphOne": "I started sport in 2011, trained 8 years of Taekwondo and earned the black belt. Then I moved to the gym and built my body naturally, step by step, without a coach.",
+    "paragraphTwo": "Along the way I experimented, made mistakes, and learned. Today I won't tell you \"just do it like me\" — I want to give you the tools to find the approach that fits your body, your age, your goal, and your life.",
+    "highlight": "You don't have to be a pro athlete… you just need to know where to start.",
+    "pills": ["14 years of sport", "8 years Taekwondo", "5 years Gym", "Natural transformation"],
+    "media": {
+      "before": "Before photo",
+      "after": "Natural transformation photo",
+      "taekwondo": "Taekwondo & black belt photo",
+      "videoLabel": "Watch the transformation video"
+    }
+  },
+  "waitlist": {
+    "kicker": "Coming soon",
+    "headline": "Launch is coming 🚀",
+    "text": "ELMADHI is still in its first launch phase. Join the waitlist to be among the very first to try the platform and enjoy exclusive launch benefits.",
+    "benefitsTitle": "Launch benefits",
+    "benefits": [
+      "Personal assessment",
+      "Gym or home workout",
+      "Diet + calories + macros",
+      "Workout & nutrition trackers",
+      "Plan adjustments",
+      "Weekly Q&A",
+      "Women-focused content",
+      "10 personal questions"
+    ],
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailPlaceholder": "example@email.com",
+      "gender": "Gender",
+      "genderMale": "Male",
+      "genderFemale": "Female",
+      "age": "Age",
+      "ageOptional": "optional",
+      "agePlaceholder": "e.g. 25",
+      "goal": "Goal",
+      "goalPlaceholder": "Choose your goal",
+      "goals": [
+        "Fat loss",
+        "Muscle gain",
+        "Improve fitness",
+        "Body recomposition"
+      ],
+      "submit": "Join the Waitlist",
+      "submitting": "Signing up…",
+      "successTitle": "You're on the list 🎉",
+      "successText": "We'll notify you the moment ELMADHI launches.",
+      "errors": {
+        "name": "Please enter your name",
+        "email": "Invalid email address",
+        "gender": "Select a gender",
+        "goal": "Choose your goal",
+        "generic": "Something went wrong, please try again"
+      }
+    }
+  },
+  "assessment": {
+    "title": "ELMADHI Free Assessment",
+    "counter": "Question {current} of {total}",
+    "next": "Next",
+    "back": "Back",
+    "close": "Close",
+    "questions": [
+      {
+        "q": "What's your main goal?",
+        "options": ["Lose fat", "Build muscle", "Reshape my whole body", "Improve health & mobility"]
+      },
+      {
+        "q": "Where do you prefer to train?",
+        "options": ["At the gym", "At home", "Both, depending on my time"]
+      },
+      {
+        "q": "How many times a week can you train?",
+        "options": ["2 days", "3 days", "4 days", "5 days or more"]
+      },
+      {
+        "q": "What's your current level?",
+        "options": ["About to start", "Beginner", "Intermediate experience", "Returning after a break"]
+      },
+      {
+        "q": "What's the hardest part for you?",
+        "options": ["Not knowing what to do", "Food and calories", "Commitment and time", "Training without seeing results"]
+      },
+      {
+        "q": "Want a plan that adapts to your life?",
+        "options": ["Absolutely, that's what I need", "I'd like to understand more first"]
+      }
+    ],
+    "result": {
+      "kicker": "Preliminary result",
+      "title": "A goal that fits you, not a random plan",
+      "text": "Based on your goal ({goal}) and the time you have, you need a personal training and nutrition plan. In the full version we ask about your height, weight, activity, and equipment and calculate everything in detail.",
+      "cta": "Join the Waitlist",
+      "types": { "cut": "Cut", "build": "Build", "recomp": "Recomp" }
+    }
+  },
+  "footer": {
+    "tagline": "Understand your body. Coach yourself.",
+    "rights": "All rights reserved"
+  }
+}
