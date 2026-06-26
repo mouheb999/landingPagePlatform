@@ -1,22 +1,40 @@
+"use client";
+
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
-  /** Render only the icon tile, without the ELMADHI wordmark. */
+  /** Render only the icon mark, without the ELMADHI wordmark. */
   markOnly?: boolean;
-  /** Tailwind size classes for the mark tile (default: h-11 w-11). */
+  /** Tailwind size classes for the mark (default: h-11 w-11). */
   className?: string;
   /** Extra classes for the wordmark text. */
   wordmarkClassName?: string;
 };
 
 /**
- * ELMADHI brand logo — green gradient arrow mark inside a dark app-icon tile,
- * paired with the ELMADHI wordmark. No "Coaching Platform" sub-label.
+ * ELMADHI brand mark.
  *
- * To use the exact uploaded artwork instead of this SVG recreation, drop the
- * file at `public/logo.png` and swap <LogoMark /> for a next/image <Image>.
+ * Primary: the artwork at `public/logo.png` (transparent PNG, sits directly on
+ * the dark background). If that file is missing it gracefully falls back to an
+ * inline SVG recreation so the logo never renders broken.
  */
 export function LogoMark({ className }: { className?: string }) {
+  const [imgFailed, setImgFailed] = useState(false);
+
+  if (!imgFailed) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src="/logo.png"
+        alt="ELMADHI"
+        className={cn("h-10 w-auto shrink-0 object-contain", className)}
+        onError={() => setImgFailed(true)}
+      />
+    );
+  }
+
+  // Fallback SVG mark (shown only if /logo.png is not present yet).
   return (
     <span
       className={cn(
@@ -26,7 +44,6 @@ export function LogoMark({ className }: { className?: string }) {
       )}
       aria-hidden="true"
     >
-      {/* ambient green glow behind the mark */}
       <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_55%,rgba(93,214,44,0.35),transparent_65%)]" />
       <svg
         viewBox="0 0 64 64"
@@ -40,17 +57,8 @@ export function LogoMark({ className }: { className?: string }) {
             <stop offset="1" stopColor="#337418" />
           </linearGradient>
         </defs>
-        {/* back chevron — folded plane for depth */}
-        <path
-          d="M10 12 L30 32 L10 52 L22 52 L42 32 L22 12 Z"
-          fill="url(#elmadhi-mark)"
-          opacity="0.55"
-        />
-        {/* front chevron — main forward arrow */}
-        <path
-          d="M26 12 L46 32 L26 52 L40 52 L60 32 L40 12 Z"
-          fill="url(#elmadhi-mark)"
-        />
+        <path d="M10 12 L30 32 L10 52 L22 52 L42 32 L22 12 Z" fill="url(#elmadhi-mark)" opacity="0.55" />
+        <path d="M26 12 L46 32 L26 52 L40 52 L60 32 L40 12 Z" fill="url(#elmadhi-mark)" />
       </svg>
     </span>
   );
