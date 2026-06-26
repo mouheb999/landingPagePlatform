@@ -13,7 +13,7 @@ export async function Waitlist() {
         <Reveal className="surface-card overflow-hidden bg-[linear-gradient(150deg,#1b271f,#202020)] p-7 sm:p-10 lg:p-12">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
-              <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
+              <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-accent">
                 {t("kicker")}
               </span>
               <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">

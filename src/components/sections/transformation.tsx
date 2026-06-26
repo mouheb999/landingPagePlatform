@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/reveal";
 import { MediaCard } from "@/components/media/media-card";
-import { VideoPlayer } from "@/components/media/video-player";
 
 export async function Transformation() {
   const t = await getTranslations("story");
@@ -13,18 +12,15 @@ export async function Transformation() {
         <Reveal className="grid grid-cols-2 gap-3">
           <MediaCard label={t("media.before")} className="aspect-[3/4]" variant="default" />
           <MediaCard label={t("media.after")} className="aspect-[3/4]" variant="accent" />
-          <div className="col-span-2">
-            <VideoPlayer label={t("media.videoLabel")} aspect="aspect-video" />
-          </div>
           <MediaCard
             label={t("media.taekwondo")}
-            className="col-span-2 aspect-[16/7]"
+            className="col-span-2 aspect-[16/9]"
             variant="cool"
           />
         </Reveal>
 
         <Reveal delay={0.1}>
-          <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
+          <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-accent">
             {t("kicker")}
           </span>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">

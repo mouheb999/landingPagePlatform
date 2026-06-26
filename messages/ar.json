@@ -62,8 +62,6 @@
       { "title": "تحليل كامل لبدنك", "desc": "نفهمو وضعك وهدفك قبل كل شيء." },
       { "title": "Workout plan على قياسك", "desc": "حسب مستواك، وقتك والمعدّات المتوفرة." },
       { "title": "Diet plan يناسب حياتك", "desc": "سعرات، Macros وأكل تنجم تلتزم بيه." },
-      { "title": "Workout tracker", "desc": "سجّل sets، reps والأوزان وشوف تقدّمك." },
-      { "title": "Nutrition tracker", "desc": "تابع أكلك وسعراتك كل يوم." },
       { "title": "خاص بالنساء", "desc": "تعديل التمرين والأكل حسب مراحل الدورة." },
       { "title": "Q&A يتجدّد", "desc": "إجابات واضحة وسهلة تتضاف كل أسبوع." },
       { "title": "10 أسئلة شخصية", "desc": "اسأل ELMADHI مباشرة على حالتك." }
@@ -117,7 +115,6 @@
       "Personal assessment",
       "Gym أو Home Workout",
       "Diet + Calories + Macros",
-      "Workout & Nutrition trackers",
       "تعديل الخطّة",
       "Q&A أسبوعي",
       "محتوى خاص بالنساء",

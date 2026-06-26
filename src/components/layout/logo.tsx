@@ -28,7 +28,7 @@ export function LogoMark({ className }: { className?: string }) {
       <img
         src="/logo.png"
         alt="ELMADHI"
-        className={cn("h-10 w-auto shrink-0 object-contain", className)}
+        className={cn("h-7 w-auto shrink-0 object-contain", className)}
         onError={() => setImgFailed(true)}
       />
     );

@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Plus, ArrowLeft } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
-import { VideoPlayer } from "@/components/media/video-player";
 import { AssessmentTrigger } from "@/components/assessment/assessment-trigger";
 
 export async function QA() {
@@ -13,7 +12,7 @@ export async function QA() {
       <div className="container-page">
         <Reveal className="surface-card grid gap-10 bg-[linear-gradient(150deg,#1a1a1a,#202020)] p-7 sm:p-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
+            <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-accent">
               {t("kicker")}
             </span>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
@@ -22,10 +21,6 @@ export async function QA() {
             <p className="mt-5 text-lg leading-relaxed text-muted">{t("copy")}</p>
 
             <AssessmentTrigger className="mt-7">{t("cta")}</AssessmentTrigger>
-
-            <div className="mt-8">
-              <VideoPlayer label={t("videoLabel")} aspect="aspect-video" />
-            </div>
           </div>
 
           <div className="grid content-start gap-3">

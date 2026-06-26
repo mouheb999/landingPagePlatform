@@ -62,8 +62,6 @@
       { "title": "Full body analysis", "desc": "We understand your situation and goal before anything else." },
       { "title": "Custom workout plan", "desc": "Based on your level, your time, and your available equipment." },
       { "title": "Diet plan that fits your life", "desc": "Calories, macros, and food you can actually stick to." },
-      { "title": "Workout tracker", "desc": "Log sets, reps, and weights and watch your progress." },
-      { "title": "Nutrition tracker", "desc": "Track your food and calories every day." },
       { "title": "Built for women", "desc": "Training and nutrition adjusted to your cycle phases." },
       { "title": "Q&A that keeps growing", "desc": "Clear, simple answers added every week." },
       { "title": "10 personal questions", "desc": "Ask ELMADHI directly about your own situation." }
@@ -117,7 +115,6 @@
       "Personal assessment",
       "Gym or home workout",
       "Diet + calories + macros",
-      "Workout & nutrition trackers",
       "Plan adjustments",
       "Weekly Q&A",
       "Women-focused content",
