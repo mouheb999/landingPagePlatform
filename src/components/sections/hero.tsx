@@ -13,19 +13,38 @@ export async function Hero() {
     <section id="top" className="relative overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-28">
       <div className="glow-accent pointer-events-none absolute -top-32 start-1/2 h-[600px] w-[600px] -translate-x-1/2 rtl:translate-x-1/2" />
 
-      <div className="container-page relative grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <Reveal>
+      <div className="container-page relative flex flex-col items-center text-center">
+        <Reveal className="max-w-3xl">
           <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
             {t("eyebrow")}
           </span>
           <h1 className="mt-4 text-balance text-4xl font-extrabold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl">
             {t("title")}
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
             {t("copy")}
           </p>
+        </Reveal>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <Reveal delay={0.15} className="relative mt-10 w-full max-w-3xl sm:mt-12">
+          <VideoPlayer
+            youtubeId="oLpBlKO1HNI"
+            label={t("videoLabel")}
+            aspect="aspect-video"
+          />
+
+          <div className="absolute -bottom-4 start-4 flex items-center gap-2 rounded-2xl border border-white/10 bg-surface px-4 py-3 text-sm font-extrabold shadow-card sm:start-6">
+            <Dumbbell className="h-4 w-4 text-accent" />
+            {t("badgeTwo")}
+          </div>
+          <div className="absolute -top-4 end-4 rounded-2xl border border-white/10 bg-surface px-4 py-3 text-sm font-extrabold shadow-card sm:end-6">
+            <span className="me-1 text-accent">●</span>
+            {t("badgeOne")}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.25} className="mt-10 flex w-full max-w-3xl flex-col items-center sm:mt-12">
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
             <a href="#waitlist" className={cn(buttonVariants({ size: "lg" }))}>
               {t("primaryCta")}
             </a>
@@ -40,24 +59,11 @@ export async function Hero() {
           <AssessmentTrigger
             variant="ghost"
             size="sm"
-            className="mt-4 px-0 text-accent hover:bg-transparent hover:text-accent-hover"
+            className="mt-4 text-accent hover:bg-transparent hover:text-accent-hover"
           >
             {t("assessmentCta")}
             <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
           </AssessmentTrigger>
-        </Reveal>
-
-        <Reveal delay={0.15} className="relative">
-          <VideoPlayer label={t("videoLabel")} aspect="aspect-[4/5] sm:aspect-[4/5]" />
-
-          <div className="absolute -bottom-4 start-4 flex items-center gap-2 rounded-2xl border border-white/10 bg-surface px-4 py-3 text-sm font-extrabold shadow-card sm:start-6">
-            <Dumbbell className="h-4 w-4 text-accent" />
-            {t("badgeTwo")}
-          </div>
-          <div className="absolute -top-4 end-4 rounded-2xl border border-white/10 bg-surface px-4 py-3 text-sm font-extrabold shadow-card sm:end-6">
-            <span className="me-1 text-accent">●</span>
-            {t("badgeOne")}
-          </div>
         </Reveal>
       </div>
     </section>
