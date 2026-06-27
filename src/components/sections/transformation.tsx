@@ -25,7 +25,7 @@ export async function Transformation() {
           <MediaCard
             label={t("media.taekwondo")}
             src="/stage.jpeg"
-            className="col-span-2 aspect-[16/9]"
+            className="col-span-2 mx-auto aspect-[3/4] w-1/2"
             variant="cool"
           />
         </Reveal>

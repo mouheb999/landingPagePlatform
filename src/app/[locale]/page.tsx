@@ -27,10 +27,10 @@ export default async function HomePage({
         <Hero />
         <Problem />
         <Solution />
+        <Transformation />
         <Inside />
         <HowItWorks />
         <QA />
-        <Transformation />
         <Waitlist />
       </main>
       <Footer />
