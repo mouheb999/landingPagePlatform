@@ -75,7 +75,7 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     id: "body_type",
     type: "choice",
     variant: "silhouettes",
-    optionValues: ["very_lean", "skinny_fat", "average", "overweight", "obese"],
+    optionValues: ["very_lean", "overweight", "skinny_fat", "average", "obese"],
   },
   {
     id: "blocker",

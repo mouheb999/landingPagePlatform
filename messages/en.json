@@ -176,7 +176,7 @@
       },
       {
         "q": "Which body is closest to yours?",
-        "options": ["Very lean", "Skinny fat", "Average", "Overweight", "Obese"]
+        "options": ["Skinny", "Overweight", "Skinny with belly", "Muscular", "Muscular but heavy"]
       },
       {
         "q": "What stopped you the most before?",
