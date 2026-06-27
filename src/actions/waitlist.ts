@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
+import { notifyNewSignup } from "@/lib/notify/telegram";
 import type { ActionState, WaitlistInsert } from "@/types";
 
 // ---------------------------------------------------------------------------
@@ -11,6 +12,7 @@ async function insertWaitlist(row: WaitlistInsert): Promise<ActionState> {
   // Allow the forms to work end-to-end before Supabase is wired up.
   if (!isSupabaseConfigured()) {
     console.info("[waitlist] (no Supabase configured) signup:", row);
+    await notifyNewSignup(row);
     return { status: "success" };
   }
 
@@ -25,6 +27,7 @@ async function insertWaitlist(row: WaitlistInsert): Promise<ActionState> {
       return { status: "error", message: "generic" };
     }
 
+    await notifyNewSignup(row);
     return { status: "success" };
   } catch (err) {
     console.error("[waitlist] unexpected error:", err);
