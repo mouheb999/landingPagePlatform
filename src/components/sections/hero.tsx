@@ -50,10 +50,10 @@ export async function Hero() {
           <AssessmentTrigger
             variant="ghost"
             size="sm"
-            className="mt-5 text-accent hover:bg-transparent hover:text-accent-hover"
+            className="group mt-5 border border-accent/30 bg-accent/5 text-accent transition-colors hover:bg-accent/10 hover:text-accent-hover"
           >
             {t("assessmentCta")}
-            <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
+            <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1 rtl:rotate-180 rtl:group-hover:translate-x-1" />
           </AssessmentTrigger>
         </Reveal>
       </div>
