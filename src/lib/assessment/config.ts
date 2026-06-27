@@ -44,8 +44,8 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
   {
     id: "weight",
     type: "slider",
-    min: 40,
-    max: 180,
+    min: 35,
+    max: 200,
     step: 1,
     default: 75,
     unit: "kg",
