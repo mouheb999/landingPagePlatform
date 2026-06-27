@@ -38,21 +38,14 @@ async function insertWaitlist(row: WaitlistInsert): Promise<ActionState> {
 const sectionSchema = z.object({
   name: z.string().trim().min(2).max(80),
   email: z.string().trim().email().max(120),
-  gender: z.enum(["male", "female"]),
-  age: z
-    .union([z.coerce.number().int().min(10).max(100), z.literal("")])
-    .optional()
-    .transform((v) => (v === "" || v === undefined ? null : v)),
-  goal: z.enum(["fat_loss", "muscle_gain", "fitness", "recomposition"]),
+  whatsapp: z.string().trim().min(5).max(30),
 });
 
 export async function joinWaitlist(formData: FormData): Promise<ActionState> {
   const parsed = sectionSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
-    gender: formData.get("gender"),
-    age: formData.get("age") ?? "",
-    goal: formData.get("goal"),
+    whatsapp: formData.get("whatsapp"),
   });
 
   if (!parsed.success) {

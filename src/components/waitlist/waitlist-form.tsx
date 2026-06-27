@@ -7,20 +7,10 @@ import { CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select } from "@/components/ui/select";
 import { joinWaitlist } from "@/actions/waitlist";
-import type { WaitlistGoal } from "@/types";
-
-const GOAL_VALUES: WaitlistGoal[] = [
-  "fat_loss",
-  "muscle_gain",
-  "fitness",
-  "recomposition",
-];
 
 export function WaitlistForm() {
   const t = useTranslations("waitlist.form");
-  const goals = t.raw("goals") as string[];
 
   const [isPending, startTransition] = useTransition();
   const [success, setSuccess] = useState(false);
@@ -82,47 +72,17 @@ export function WaitlistForm() {
         />
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="grid gap-2">
-          <Label htmlFor="wl-gender">{t("gender")}</Label>
-          <Select id="wl-gender" name="gender" required defaultValue="">
-            <option value="" disabled>
-              {t("gender")}
-            </option>
-            <option value="male">{t("genderMale")}</option>
-            <option value="female">{t("genderFemale")}</option>
-          </Select>
-        </div>
-
-        <div className="grid gap-2">
-          <Label htmlFor="wl-age">
-            {t("age")}
-            <span className="font-normal text-muted">({t("ageOptional")})</span>
-          </Label>
-          <Input
-            id="wl-age"
-            name="age"
-            type="number"
-            min={10}
-            max={100}
-            inputMode="numeric"
-            placeholder={t("agePlaceholder")}
-          />
-        </div>
-      </div>
-
       <div className="grid gap-2">
-        <Label htmlFor="wl-goal">{t("goal")}</Label>
-        <Select id="wl-goal" name="goal" required defaultValue="">
-          <option value="" disabled>
-            {t("goalPlaceholder")}
-          </option>
-          {GOAL_VALUES.map((value, i) => (
-            <option key={value} value={value}>
-              {goals[i]}
-            </option>
-          ))}
-        </Select>
+        <Label htmlFor="wl-whatsapp">{t("whatsapp")}</Label>
+        <Input
+          id="wl-whatsapp"
+          name="whatsapp"
+          type="tel"
+          required
+          inputMode="tel"
+          autoComplete="tel"
+          placeholder={t("whatsappPlaceholder")}
+        />
       </div>
 
       {error && (

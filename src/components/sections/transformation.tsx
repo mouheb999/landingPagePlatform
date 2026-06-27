@@ -13,14 +13,14 @@ export async function Transformation() {
           <MediaCard
             label={t("media.before")}
             caption={t("media.beforeTag")}
-            src="/after.jpeg"
+            src="/before.jpeg"
             className="aspect-[3/4]"
             variant="default"
           />
           <MediaCard
             label={t("media.after")}
             caption={t("media.afterTag")}
-            src="/before.jpeg"
+            src="/after.jpeg"
             className="aspect-[3/4]"
             variant="accent"
           />
