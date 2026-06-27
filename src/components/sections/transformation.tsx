@@ -34,7 +34,7 @@ export async function Transformation() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-accent">
+          <span className="text-base font-extrabold uppercase tracking-[0.2em] text-accent rtl:tracking-normal rtl:normal-case">
             {t("kicker")}
           </span>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">

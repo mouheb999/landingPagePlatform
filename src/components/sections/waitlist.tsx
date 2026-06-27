@@ -9,7 +9,7 @@ export async function Waitlist() {
     <section id="waitlist" className="scroll-mt-24 py-20 sm:py-28">
       <div className="container-page">
         <Reveal className="surface-card mx-auto max-w-2xl overflow-hidden bg-[linear-gradient(150deg,#1b271f,#202020)] p-7 text-center sm:p-10 lg:p-12">
-          <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-accent">
+          <span className="text-base font-extrabold uppercase tracking-[0.2em] text-accent rtl:tracking-normal rtl:normal-case">
             {t("kicker")}
           </span>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">

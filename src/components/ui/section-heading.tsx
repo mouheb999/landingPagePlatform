@@ -25,7 +25,7 @@ export function SectionHeading({
       )}
     >
       {kicker && (
-        <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-accent">
+        <span className="text-base font-extrabold uppercase tracking-[0.2em] text-accent rtl:tracking-normal rtl:normal-case">
           {kicker}
         </span>
       )}

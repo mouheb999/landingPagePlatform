@@ -219,7 +219,7 @@ function QuizStep({
       transition={{ duration: 0.35, ease: EASE }}
       className="mt-6"
     >
-      <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-accent">
+      <span className="text-base font-extrabold uppercase tracking-[0.2em] text-accent rtl:tracking-normal rtl:normal-case">
         {counter}
       </span>
       <h3 className="mt-2 text-2xl font-extrabold leading-snug">{question.q}</h3>
@@ -391,7 +391,7 @@ function ResultView({
       className="mt-6"
     >
       <div className="text-center">
-        <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-accent">
+        <span className="text-base font-extrabold uppercase tracking-[0.2em] text-accent rtl:tracking-normal rtl:normal-case">
           {t("kicker")}
         </span>
         <h3 className="mt-2 text-2xl font-extrabold leading-snug">

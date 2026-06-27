@@ -15,7 +15,7 @@ export async function Hero() {
 
       <div className="container-page relative flex flex-col items-center text-center">
         <Reveal className="max-w-3xl px-2 sm:px-0">
-          <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-accent">
+          <span className="text-base font-extrabold uppercase tracking-[0.2em] text-accent rtl:tracking-normal rtl:normal-case">
             {t("eyebrow")}
           </span>
           <h1 className="mt-6 text-balance text-[2rem] font-extrabold leading-[1.18] tracking-tight sm:text-5xl sm:leading-[1.15] lg:text-6xl">

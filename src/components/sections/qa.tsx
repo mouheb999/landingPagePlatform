@@ -12,7 +12,7 @@ export async function QA() {
       <div className="container-page">
         <Reveal className="surface-card grid gap-10 bg-[linear-gradient(150deg,#1a1a1a,#202020)] p-7 sm:p-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-accent">
+            <span className="text-base font-extrabold uppercase tracking-[0.2em] text-accent rtl:tracking-normal rtl:normal-case">
               {t("kicker")}
             </span>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
