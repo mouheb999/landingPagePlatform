@@ -244,6 +244,8 @@
   },
   "footer": {
     "tagline": "Understand your body. Coach yourself.",
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "developedBy": "Developed by",
+    "agencyCta": "Need a site like this?"
   }
 }
