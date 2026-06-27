@@ -103,9 +103,9 @@
       "before": "صورة قبل",
       "after": "صورة التحوّل الطبيعي",
       "taekwondo": "صورة Taekwondo والحزام الأسود",
-      "beforeTag": "قبل",
-      "afterTag": "بعد",
-      "stageTag": "على الركح",
+      "beforeTag": "Before",
+      "afterTag": "After",
+      "stageTag": "On stage",
       "videoLabel": "شاهد فيديو التحوّل"
     }
   },
