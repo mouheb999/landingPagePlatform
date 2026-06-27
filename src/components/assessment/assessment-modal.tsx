@@ -596,27 +596,15 @@ function SignupForm({
         <input type="hidden" name="tdee" value={result.tdee} />
         <input type="hidden" name="bmi" value={result.bmi} />
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="grid gap-2">
-            <Label htmlFor="as-first">{t("firstName")}</Label>
-            <Input
-              id="as-first"
-              name="firstName"
-              required
-              autoComplete="given-name"
-              placeholder={t("firstNamePlaceholder")}
-            />
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="as-last">{t("lastName")}</Label>
-            <Input
-              id="as-last"
-              name="lastName"
-              required
-              autoComplete="family-name"
-              placeholder={t("lastNamePlaceholder")}
-            />
-          </div>
+        <div className="grid gap-2">
+          <Label htmlFor="as-name">{t("fullName")}</Label>
+          <Input
+            id="as-name"
+            name="fullName"
+            required
+            autoComplete="name"
+            placeholder={t("fullNamePlaceholder")}
+          />
         </div>
 
         <div className="grid gap-2">
@@ -642,17 +630,6 @@ function SignupForm({
             inputMode="tel"
             autoComplete="tel"
             placeholder={t("whatsappPlaceholder")}
-          />
-        </div>
-
-        <div className="grid gap-2">
-          <Label htmlFor="as-country">{t("country")}</Label>
-          <Input
-            id="as-country"
-            name="country"
-            required
-            autoComplete="country-name"
-            placeholder={t("countryPlaceholder")}
           />
         </div>
 

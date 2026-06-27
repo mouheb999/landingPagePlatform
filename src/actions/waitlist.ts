@@ -66,11 +66,9 @@ export async function joinWaitlist(formData: FormData): Promise<ActionState> {
 // Assessment form (rich payload with computed snapshot)
 // ---------------------------------------------------------------------------
 const assessmentSchema = z.object({
-  firstName: z.string().trim().min(1).max(60),
-  lastName: z.string().trim().min(1).max(60),
+  fullName: z.string().trim().min(2).max(120),
   email: z.string().trim().email().max(120),
   whatsapp: z.string().trim().min(5).max(30),
-  country: z.string().trim().min(2).max(60),
   gender: z.enum(["male", "female"]),
   goal: z.enum(["fat_loss", "muscle_gain", "fitness", "recomposition"]),
   age: z.coerce.number().int().min(10).max(100),
@@ -95,11 +93,9 @@ export async function submitAssessment(
   formData: FormData
 ): Promise<ActionState> {
   const parsed = assessmentSchema.safeParse({
-    firstName: formData.get("firstName"),
-    lastName: formData.get("lastName"),
+    fullName: formData.get("fullName"),
     email: formData.get("email"),
     whatsapp: formData.get("whatsapp"),
-    country: formData.get("country"),
     gender: formData.get("gender"),
     goal: formData.get("goal"),
     age: formData.get("age"),
@@ -126,12 +122,9 @@ export async function submitAssessment(
 
   const d = parsed.data;
   return insertWaitlist({
-    name: `${d.firstName} ${d.lastName}`.trim(),
-    first_name: d.firstName,
-    last_name: d.lastName,
+    name: d.fullName,
     email: d.email,
     whatsapp: d.whatsapp,
-    country: d.country,
     gender: d.gender,
     goal: d.goal,
     age: d.age,
