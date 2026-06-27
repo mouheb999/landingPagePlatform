@@ -103,6 +103,9 @@
       "before": "Before photo",
       "after": "Natural transformation photo",
       "taekwondo": "Taekwondo & black belt photo",
+      "beforeTag": "Before",
+      "afterTag": "After",
+      "stageTag": "On stage",
       "videoLabel": "Watch the transformation video"
     }
   },

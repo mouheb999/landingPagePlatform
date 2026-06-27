@@ -5,6 +5,8 @@ interface MediaCardProps {
   label: string;
   /** Optional image source. When omitted, a styled placeholder is shown. */
   src?: string;
+  /** Optional caption rendered as a badge on top of the image. */
+  caption?: string;
   className?: string;
   variant?: "default" | "accent" | "cool";
 }
@@ -22,6 +24,7 @@ const variantBg: Record<NonNullable<MediaCardProps["variant"]>, string> = {
 export function MediaCard({
   label,
   src,
+  caption,
   className,
   variant = "default",
 }: MediaCardProps) {
@@ -33,6 +36,11 @@ export function MediaCard({
         className
       )}
     >
+      {src && caption && (
+        <span className="absolute start-3 top-3 z-10 rounded-full bg-bg/80 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-ink backdrop-blur-sm">
+          {caption}
+        </span>
+      )}
       {src ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img src={src} alt={label} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />

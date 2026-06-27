@@ -12,20 +12,23 @@ export async function Transformation() {
         <Reveal className="grid grid-cols-2 gap-3">
           <MediaCard
             label={t("media.before")}
-            src="/before.jpeg"
+            caption={t("media.beforeTag")}
+            src="/after.jpeg"
             className="aspect-[3/4]"
             variant="default"
           />
           <MediaCard
             label={t("media.after")}
-            src="/after.jpeg"
+            caption={t("media.afterTag")}
+            src="/before.jpeg"
             className="aspect-[3/4]"
             variant="accent"
           />
           <MediaCard
             label={t("media.taekwondo")}
+            caption={t("media.stageTag")}
             src="/stage.jpeg"
-            className="col-span-2 mx-auto aspect-[3/4] w-1/2"
+            className="col-span-2 aspect-[3/4]"
             variant="cool"
           />
         </Reveal>
