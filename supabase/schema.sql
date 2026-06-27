@@ -53,17 +53,66 @@ create table if not exists public.private_questions (
 -- ---------------------------------------------------------------------------
 -- waitlist — pre-launch signups (primary conversion goal)
 -- ---------------------------------------------------------------------------
+-- Two entry points write here:
+--   * the simple "section" form (name / gender / age / goal)
+--   * the "assessment" form, which also stores the computed snapshot
+-- Most columns are nullable so a single table serves both sources.
 create table if not exists public.waitlist (
   id uuid primary key default gen_random_uuid(),
-  name text not null,
+  name text,
+  first_name text,
+  last_name text,
   email text not null unique,
-  gender text not null check (gender in ('male', 'female')),
+  whatsapp text,
+  country text,
+  gender text check (gender in ('male', 'female')),
   age int check (age between 10 and 100),
-  goal text not null check (goal in ('fat_loss', 'muscle_gain', 'fitness', 'recomposition')),
+  goal text check (goal in ('fat_loss', 'muscle_gain', 'fitness', 'recomposition')),
+  height int,
+  weight numeric,
+  activity text,
+  experience text,
+  body_type text,
+  strategy text check (strategy in ('cut', 'lean_bulk', 'recomp', 'maintenance')),
+  maintenance_calories int,
+  target_calories int,
+  protein int,
+  carbs int,
+  fat int,
+  timeline_weeks int,
+  bmr int,
+  tdee int,
+  bmi numeric,
+  source text not null default 'section' check (source in ('section', 'assessment')),
   created_at timestamptz not null default now()
 );
 
 create index if not exists waitlist_created_at_idx on public.waitlist (created_at desc);
+
+-- Idempotent migration for databases created before the assessment snapshot.
+alter table public.waitlist alter column name drop not null;
+alter table public.waitlist alter column gender drop not null;
+alter table public.waitlist alter column goal drop not null;
+alter table public.waitlist add column if not exists first_name text;
+alter table public.waitlist add column if not exists last_name text;
+alter table public.waitlist add column if not exists whatsapp text;
+alter table public.waitlist add column if not exists country text;
+alter table public.waitlist add column if not exists height int;
+alter table public.waitlist add column if not exists weight numeric;
+alter table public.waitlist add column if not exists activity text;
+alter table public.waitlist add column if not exists experience text;
+alter table public.waitlist add column if not exists body_type text;
+alter table public.waitlist add column if not exists strategy text;
+alter table public.waitlist add column if not exists maintenance_calories int;
+alter table public.waitlist add column if not exists target_calories int;
+alter table public.waitlist add column if not exists protein int;
+alter table public.waitlist add column if not exists carbs int;
+alter table public.waitlist add column if not exists fat int;
+alter table public.waitlist add column if not exists timeline_weeks int;
+alter table public.waitlist add column if not exists bmr int;
+alter table public.waitlist add column if not exists tdee int;
+alter table public.waitlist add column if not exists bmi numeric;
+alter table public.waitlist add column if not exists source text not null default 'section';
 
 -- ---------------------------------------------------------------------------
 -- Row Level Security

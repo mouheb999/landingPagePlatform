@@ -158,38 +158,101 @@
     "next": "Next",
     "back": "Back",
     "close": "Close",
+    "units": { "years": "years", "cm": "cm", "kg": "kg" },
     "questions": [
       {
         "q": "What's your main goal?",
-        "options": ["Lose fat", "Build muscle", "Reshape my whole body", "Improve health & mobility"]
+        "options": ["Lose fat", "Build muscle", "Reshape my body", "Improve my health"]
       },
       {
-        "q": "Where do you prefer to train?",
-        "options": ["At the gym", "At home", "Both, depending on my time"]
+        "q": "Are you male or female?",
+        "options": ["Male", "Female"]
+      },
+      { "q": "How old are you?", "options": [] },
+      { "q": "How tall are you?", "options": [] },
+      { "q": "What's your weight right now?", "options": [] },
+      {
+        "q": "How does your day usually go?",
+        "options": ["Mostly sitting", "I move a little", "I move a lot", "Active job", "Athlete / hard labor"]
       },
       {
-        "q": "How many times a week can you train?",
-        "options": ["2 days", "3 days", "4 days", "5 days or more"]
+        "q": "Have you trained before?",
+        "options": ["No, first time", "Beginner", "I have some experience", "I train consistently"]
       },
       {
-        "q": "What's your current level?",
-        "options": ["About to start", "Beginner", "Intermediate experience", "Returning after a break"]
+        "q": "How many days a week can you commit?",
+        "options": ["2 days", "3 days", "4 days", "5 days", "6+ days"]
       },
       {
-        "q": "What's the hardest part for you?",
-        "options": ["Not knowing what to do", "Food and calories", "Commitment and time", "Training without seeing results"]
+        "q": "Which body is closest to yours?",
+        "options": ["Very lean", "Skinny fat", "Average", "Overweight", "Obese"]
       },
       {
-        "q": "Want a plan that adapts to your life?",
-        "options": ["Absolutely, that's what I need", "I'd like to understand more first"]
+        "q": "What stopped you the most before?",
+        "options": ["I don't know what to eat", "I eat too much", "Staying committed", "I don't know where to start", "I don't see results"]
       }
     ],
     "result": {
-      "kicker": "Preliminary result",
-      "title": "A goal that fits you, not a random plan",
-      "text": "Based on your goal ({goal}) and the time you have, you need a personal training and nutrition plan. In the full version we ask about your height, weight, activity, and equipment and calculate everything in detail.",
-      "cta": "Join the Waitlist",
-      "types": { "cut": "Cut", "build": "Build", "recomp": "Recomp" }
+      "kicker": "Your result",
+      "headline": "Your Assessment is Ready 👇",
+      "subhead": "Calculated from your body and your goal — no guesswork.",
+      "maintenanceLabel": "Maintenance Calories",
+      "targetLabel": "Target Calories",
+      "proteinLabel": "Protein",
+      "carbsLabel": "Carbs",
+      "fatLabel": "Fat",
+      "strategyLabel": "Recommended Strategy",
+      "timelineLabel": "Estimated Timeline",
+      "confidenceLabel": "Confidence",
+      "kcal": "kcal",
+      "grams": "g",
+      "weeksValue": "{weeks} weeks",
+      "ongoing": "Ongoing",
+      "strategies": {
+        "cut": "Cut",
+        "lean_bulk": "Lean Bulk",
+        "recomp": "Body Recomp",
+        "maintenance": "Maintenance"
+      },
+      "explanations": {
+        "cut": "To reach your goal, eat around {target} kcal a day with {protein}g of protein. Stay consistent and you'll see real fat loss in about {timeline}.",
+        "lean_bulk": "To build muscle cleanly, aim for around {target} kcal a day and {protein}g of protein. Give it about {timeline} of consistent training.",
+        "recomp": "Your best move is a body recomposition: eat around {target} kcal with {protein}g of protein, train hard, and build muscle while losing fat over about {timeline}.",
+        "maintenance": "You're in a good spot. Eat around {target} kcal a day with {protein}g of protein to maintain and feel your best."
+      },
+      "cta": "🚀 Join the Waitlist"
+    },
+    "premium": {
+      "title": "Unlocked in the full platform",
+      "subtitle": "Your free result is just the start. The complete plan comes with:",
+      "locked": "Locked",
+      "features": {
+        "meal_plan": "Custom meal plan",
+        "workout_plan": "Custom workout plan",
+        "progress_tracking": "Progress tracking",
+        "food_logger": "AI food logger",
+        "coaching": "Weekly coaching"
+      }
+    },
+    "form": {
+      "title": "Almost there",
+      "subtitle": "Join the waitlist and we'll save your result for launch.",
+      "firstName": "First name",
+      "firstNamePlaceholder": "Your first name",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "Your last name",
+      "email": "Email",
+      "emailPlaceholder": "example@email.com",
+      "whatsapp": "WhatsApp number",
+      "whatsappPlaceholder": "+216 ...",
+      "country": "Country",
+      "countryPlaceholder": "Your country",
+      "submit": "🚀 Join the Waitlist",
+      "submitting": "Signing up…",
+      "done": "Close",
+      "successTitle": "You're in 🔥",
+      "successText": "We saved you on the waitlist. The moment ELMADHI launches we'll message you on WhatsApp — and your result will be waiting the second you log in.",
+      "errors": { "generic": "Something went wrong, please try again" }
     }
   },
   "footer": {
