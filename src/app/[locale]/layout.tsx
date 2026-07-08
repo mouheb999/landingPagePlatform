@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
@@ -22,6 +22,10 @@ const tajawal = Tajawal({
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://elmadhi.com";
+
+export const viewport: Viewport = {
+  themeColor: "#0f0f0f",
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
