@@ -62,9 +62,7 @@
       { "title": "Full body analysis", "desc": "We understand your situation and goal before anything else." },
       { "title": "Custom workout plan", "desc": "Based on your level, your time, and your available equipment." },
       { "title": "Diet plan that fits your life", "desc": "Calories, macros, and food you can actually stick to." },
-      { "title": "Built for women", "desc": "Training and nutrition adjusted to your cycle phases." },
-      { "title": "Q&A that keeps growing", "desc": "Clear, simple answers added every week." },
-      { "title": "10 personal questions", "desc": "Ask ELMADHI directly about your own situation." }
+      { "title": "Q&A that keeps growing", "desc": "Clear, simple answers added every week." }
     ]
   },
   "howItWorks": {
@@ -74,22 +72,38 @@
       { "title": "The free assessment", "desc": "We define your body goal, calories, and macros." },
       { "title": "Join the waitlist", "desc": "Sign up with your email to be among the first at launch." },
       { "title": "Complete the assessment", "desc": "Your body, experience, time, food, and equipment." },
-      { "title": "Your plan within an hour", "desc": "Workout and diet, with the reason behind every choice." },
       { "title": "Progress and adjust", "desc": "A new check-in and the platform updates your program." }
     ]
   },
-  "qa": {
-    "kicker": "Got a question?",
-    "title": "Every question has a clear answer",
-    "copy": "Whether you start training today, have spent time in the gym, train at home, man or woman… you'll find the information explained simply, correctly, and easy to apply.",
-    "cta": "Start the free assessment",
-    "videoLabel": "Watch a video answer",
-    "questions": [
-      "How do I know how many calories I need?",
-      "Gym or home workout?",
-      "How do I build muscle without much fat?",
-      "How do I adjust training during my cycle?",
-      "Didn't find your question? Suggest it to us"
+  "pricing": {
+    "kicker": "Plans & pricing",
+    "title": "Pick the plan that fits you",
+    "subtitle": "Start today, cancel whenever you want.",
+    "currency": "DT",
+    "perMonth": "/mo",
+    "mostPopular": "Most popular",
+    "cta": "Get started",
+    "plans": [
+      {
+        "name": "Standard",
+        "price": "29",
+        "features": [
+          "Diet & Workout Makers",
+          "Workout logging & food diary",
+          "Weekly review & adaptive coach",
+          "Q&A library"
+        ]
+      },
+      {
+        "name": "Premium",
+        "price": "49",
+        "highlight": "Everything in Standard",
+        "features": [
+          "AI calorie camera",
+          "Priority WhatsApp support",
+          "Early access to new features"
+        ]
+      }
     ]
   },
   "story": {
@@ -98,7 +112,6 @@
     "paragraphOne": "I started sport in 2011, trained 8 years of Taekwondo and earned the black belt. Then I moved to the gym and built my body naturally, step by step, without a coach.",
     "paragraphTwo": "Along the way I experimented, made mistakes, and learned. Today I won't tell you \"just do it like me\" — I want to give you the tools to find the approach that fits your body, your age, your goal, and your life.",
     "highlight": "You don't have to be a pro athlete… you just need to know where to start.",
-    "pills": ["14 years of sport", "8 years Taekwondo", "5 years Gym", "Natural transformation"],
     "media": {
       "before": "Before photo",
       "after": "Natural transformation photo",

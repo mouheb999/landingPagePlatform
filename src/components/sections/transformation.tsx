@@ -4,7 +4,6 @@ import { MediaCard } from "@/components/media/media-card";
 
 export async function Transformation() {
   const t = await getTranslations("story");
-  const pills = t.raw("pills") as string[];
 
   return (
     <section id="story" className="scroll-mt-24 py-20 sm:py-28">
@@ -49,17 +48,6 @@ export async function Transformation() {
           <h3 className="mt-6 text-xl font-extrabold leading-snug">
             {t("highlight")}
           </h3>
-
-          <div className="mt-6 flex flex-wrap gap-2">
-            {pills.map((pill) => (
-              <span
-                key={pill}
-                className="rounded-full border border-white/10 bg-surface px-4 py-2 text-sm font-bold"
-              >
-                {pill}
-              </span>
-            ))}
-          </div>
         </Reveal>
       </div>
     </section>

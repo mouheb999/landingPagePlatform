@@ -8,7 +8,7 @@ import { Problem } from "@/components/sections/problem";
 import { Solution } from "@/components/sections/solution";
 import { Inside } from "@/components/sections/inside";
 import { HowItWorks } from "@/components/sections/how-it-works";
-import { QA } from "@/components/sections/qa";
+import { Pricing } from "@/components/sections/pricing";
 import { Transformation } from "@/components/sections/transformation";
 import { Waitlist } from "@/components/sections/waitlist";
 
@@ -30,7 +30,7 @@ export default async function HomePage({
         <Transformation />
         <Inside />
         <HowItWorks />
-        <QA />
+        <Pricing />
         <Waitlist />
       </main>
       <Footer />

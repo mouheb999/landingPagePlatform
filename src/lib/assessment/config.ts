@@ -115,10 +115,10 @@ export const CALORIE_ADJUSTMENT: Record<StrategyId, number> = {
 
 /** Protein target (g per kg of bodyweight) per strategy. */
 export const PROTEIN_PER_KG: Record<StrategyId, number> = {
-  cut: 2.2,
-  lean_bulk: 2.0,
-  recomp: 2.2,
-  maintenance: 1.8,
+  cut: 1.8,
+  lean_bulk: 1.6,
+  recomp: 1.8,
+  maintenance: 1.6,
 };
 
 /** Fat target (g per kg of bodyweight) — constant across strategies. */

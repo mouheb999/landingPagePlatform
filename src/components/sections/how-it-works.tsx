@@ -13,7 +13,7 @@ export async function HowItWorks() {
       <div className="container-page">
         <SectionHeading kicker={t("kicker")} title={t("title")} />
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
             <Reveal
               key={i}

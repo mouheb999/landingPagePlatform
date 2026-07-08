@@ -3,22 +3,13 @@ import {
   Activity,
   Dumbbell,
   Salad,
-  Venus,
   HelpCircle,
-  Mail,
   type LucideIcon,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 
-const ICONS: LucideIcon[] = [
-  Activity,
-  Dumbbell,
-  Salad,
-  Venus,
-  HelpCircle,
-  Mail,
-];
+const ICONS: LucideIcon[] = [Activity, Dumbbell, Salad, HelpCircle];
 
 type Feature = { title: string; desc: string };
 
