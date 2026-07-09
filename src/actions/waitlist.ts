@@ -6,6 +6,19 @@ import { notifyNewSignup } from "@/lib/notify/telegram";
 import type { ActionState, WaitlistInsert } from "@/types";
 
 // ---------------------------------------------------------------------------
+// Spam trap (honeypot)
+// ---------------------------------------------------------------------------
+// A hidden form field no human ever sees. Bots that auto-fill every input
+// populate it; when it arrives non-empty we silently drop the submission
+// (return success so the bot learns nothing, but never touch the DB/Telegram).
+const HONEYPOT_FIELD = "company_url";
+
+function isHoneypotTripped(formData: FormData): boolean {
+  const trap = formData.get(HONEYPOT_FIELD);
+  return typeof trap === "string" && trap.trim().length > 0;
+}
+
+// ---------------------------------------------------------------------------
 // Shared insert helper
 // ---------------------------------------------------------------------------
 async function insertWaitlist(row: WaitlistInsert): Promise<ActionState> {
@@ -53,6 +66,8 @@ const sectionSchema = z.object({
 });
 
 export async function joinWaitlist(formData: FormData): Promise<ActionState> {
+  if (isHoneypotTripped(formData)) return { status: "success" };
+
   const parsed = sectionSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
@@ -96,6 +111,8 @@ const assessmentSchema = z.object({
 export async function submitAssessment(
   formData: FormData
 ): Promise<ActionState> {
+  if (isHoneypotTripped(formData)) return { status: "success" };
+
   const parsed = assessmentSchema.safeParse({
     fullName: formData.get("fullName"),
     email: formData.get("email"),

@@ -572,6 +572,21 @@ function SignupForm({
       <p className="mt-2 text-sm text-muted">{t("subtitle")}</p>
 
       <form action={action} className="mt-6 grid gap-4">
+        {/* Honeypot: hidden from humans; bots that fill it are silently dropped. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-[9999px] h-px w-px overflow-hidden opacity-0"
+        >
+          <label htmlFor="as-company-url">Company website</label>
+          <input
+            id="as-company-url"
+            type="text"
+            name="company_url"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
         {/* Auto-populated snapshot — the user never edits these. */}
         <input type="hidden" name="goal" value={GOAL_TO_WAITLIST[answers.goal]} />
         <input type="hidden" name="gender" value={answers.gender} />

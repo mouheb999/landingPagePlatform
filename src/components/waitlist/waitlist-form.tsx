@@ -47,6 +47,21 @@ export function WaitlistForm() {
 
   return (
     <form action={action} className="grid gap-5">
+      {/* Honeypot: hidden from humans; bots that fill it are silently dropped. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-[9999px] h-px w-px overflow-hidden opacity-0"
+      >
+        <label htmlFor="wl-company-url">Company website</label>
+        <input
+          id="wl-company-url"
+          type="text"
+          name="company_url"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="grid gap-2">
         <Label htmlFor="wl-name">{t("name")}</Label>
         <Input
