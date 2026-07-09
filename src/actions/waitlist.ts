@@ -18,16 +18,24 @@ async function insertWaitlist(row: WaitlistInsert): Promise<ActionState> {
 
   try {
     const supabase = await createClient();
-    const { error } = await supabase.from("waitlist").insert(row);
+    // join_waitlist() inserts the row and returns { seq, duplicate }. It runs
+    // security-definer so we can read back the incremental signup number
+    // without opening the table for reads. Duplicates are handled inside the
+    // function (returns the original seq + duplicate:true) instead of erroring.
+    const { data, error } = await supabase.rpc("join_waitlist", {
+      payload: row,
+    });
 
     if (error) {
-      // Unique violation → already signed up, treat as success for UX.
-      if (error.code === "23505") return { status: "success" };
       console.error("[waitlist] insert error:", error);
       return { status: "error", message: "generic" };
     }
 
-    await notifyNewSignup(row);
+    const result = (data ?? {}) as { seq?: number | null; duplicate?: boolean };
+    await notifyNewSignup(row, {
+      seq: result.seq ?? null,
+      duplicate: result.duplicate ?? false,
+    });
     return { status: "success" };
   } catch (err) {
     console.error("[waitlist] unexpected error:", err);
