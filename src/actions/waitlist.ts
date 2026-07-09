@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import { notifyNewSignup } from "@/lib/notify/telegram";
+import { sendWelcomeEmail } from "@/lib/notify/email";
 import type { ActionState, WaitlistInsert } from "@/types";
 
 // ---------------------------------------------------------------------------
@@ -26,6 +27,7 @@ async function insertWaitlist(row: WaitlistInsert): Promise<ActionState> {
   if (!isSupabaseConfigured()) {
     console.info("[waitlist] (no Supabase configured) signup:", row);
     await notifyNewSignup(row);
+    if (row.email) await sendWelcomeEmail(row.email, row.name);
     return { status: "success" };
   }
 
@@ -49,6 +51,10 @@ async function insertWaitlist(row: WaitlistInsert): Promise<ActionState> {
       seq: result.seq ?? null,
       duplicate: result.duplicate ?? false,
     });
+    // Welcome email only for genuinely new signups — never re-mail duplicates.
+    if (!result.duplicate && row.email) {
+      await sendWelcomeEmail(row.email, row.name);
+    }
     return { status: "success" };
   } catch (err) {
     console.error("[waitlist] unexpected error:", err);
