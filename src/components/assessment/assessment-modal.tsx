@@ -233,7 +233,7 @@ function QuizStep({
           onCommit={onCommit}
         />
       ) : config.variant === "silhouettes" ? (
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-5">
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
           {question.options.map((label, i) => {
             const selected = answers[config.id] === config.optionValues[i];
             return (

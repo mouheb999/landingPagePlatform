@@ -24,6 +24,7 @@ export type ExperienceId =
 
 export type BodyTypeId =
   | "very_lean"
+  | "normal"
   | "skinny_fat"
   | "average"
   | "overweight"

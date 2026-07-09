@@ -189,7 +189,7 @@
       },
       {
         "q": "Which body is closest to yours?",
-        "options": ["Skinny", "Overweight", "Skinny with belly", "Muscular", "Muscular but heavy"]
+        "options": ["Skinny", "Average", "Overweight", "Skinny with belly", "Muscular", "Muscular but heavy"]
       },
       {
         "q": "What stopped you the most before?",
