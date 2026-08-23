@@ -21,7 +21,7 @@ import nodemailer, { type Transporter } from "nodemailer";
 const BRAND = {
   bg: "#0f0f0f",
   surface: "#202020",
-  accent: "#5dd62c",
+  accent: "#c0da1b",
   ink: "#f8f8f8",
   muted: "rgba(248,248,248,0.65)",
   hairline: "rgba(255,255,255,0.10)",
@@ -67,8 +67,8 @@ function getLogoBuffer(): Buffer | null {
   return logoBuffer;
 }
 
-const SUBJECT = "أهلا بيك في منصة ELMADHI 🎉 إنت من الأوائل!";
-const LOGO_CID = "elmadhi-logo";
+const SUBJECT = "أهلا بيك في منصة HYPE FITNESS 🎉 إنت من الأوائل!";
+const LOGO_CID = "hype-logo";
 
 /**
  * Builds the branded Arabic (RTL) welcome email as HTML. Table-based + inline
@@ -91,7 +91,7 @@ function buildHtml(name: string | null | undefined, logoSrc: string): string {
   :root { color-scheme: dark; supported-color-schemes: dark; }
   body, .email-bg { background-color: ${BRAND.bg} !important; }
 </style>
-<title>ELMADHI</title>
+<title>HYPE FITNESS</title>
 </head>
 <body style="margin:0;padding:0;background-color:${BRAND.bg};color:${BRAND.ink};font-family:${FONT_STACK};-webkit-font-smoothing:antialiased;">
   <div style="display:none;max-height:0;overflow:hidden;opacity:0;">حجزت بلاصتك بنجاح. أول ما تفتح المنصة، نبعثولك إيميل وتلقى تقييمك حاضر. 🚀</div>
@@ -102,10 +102,7 @@ function buildHtml(name: string | null | undefined, logoSrc: string): string {
           <!-- Header / logo -->
           <tr>
             <td align="center" style="padding:36px 32px 4px 32px;">
-              <img src="${logoSrc}" alt="ELMADHI" height="40" style="height:40px;width:auto;display:inline-block;vertical-align:middle;" />
-              <div style="margin-top:10px;font-family:${FONT_STACK};font-size:22px;font-weight:800;letter-spacing:1px;color:${BRAND.ink};">
-                ELMADHI
-              </div>
+              <img src="${logoSrc}" alt="HYPE FITNESS" height="44" style="height:44px;width:auto;display:inline-block;vertical-align:middle;" />
             </td>
           </tr>
           <!-- Headline -->
@@ -115,7 +112,7 @@ function buildHtml(name: string | null | undefined, logoSrc: string): string {
                 مبروك! 🎉
               </div>
               <div style="margin-top:6px;font-family:${FONT_STACK};font-size:19px;line-height:1.6;font-weight:700;color:${BRAND.accent};">
-                إنت رسميًا من الأوائل في ELMADHI
+                إنت رسميًا من الأوائل في HYPE FITNESS
               </div>
             </td>
           </tr>
@@ -126,10 +123,10 @@ function buildHtml(name: string | null | undefined, logoSrc: string): string {
                 ${greeting}
               </p>
               <p style="margin:0 0 16px 0;font-family:${FONT_STACK};font-size:16px;line-height:1.95;color:${BRAND.muted};">
-                حجزت بلاصتك في <strong style="color:${BRAND.ink};">ELMADHI</strong>، وإنت من أوّل الناس اللي باش يجرّبوا المنصة قبل الإطلاق الرسمي.
+                حجزت بلاصتك في <strong style="color:${BRAND.ink};">HYPE FITNESS</strong>، وإنت من أوّل الناس اللي باش يجرّبوا المنصة قبل الإطلاق الرسمي.
               </p>
               <p style="margin:0 0 16px 0;font-family:${FONT_STACK};font-size:16px;line-height:1.95;color:${BRAND.muted};">
-                <strong style="color:${BRAND.ink};">ELMADHI ما تعطيكش مجرد برنامج تمشي عليه.</strong> تعطيك المعرفة اللي تخليك تفهم جسمك، تختار أكلك بذكاء، تتمرّن بالطريقة الصحيحة، ومع الوقت معادش تحتاج حد يقولك شتعمل.
+                <strong style="color:${BRAND.ink};">HYPE FITNESS ما تعطيكش مجرد برنامج تمشي عليه.</strong> تعطيك المعرفة اللي تخليك تفهم جسمك، تختار أكلك بذكاء، تتمرّن بالطريقة الصحيحة، ومع الوقت معادش تحتاج حد يقولك شتعمل.
               </p>
               <p style="margin:0 0 16px 0;font-family:${FONT_STACK};font-size:16px;line-height:1.95;color:${BRAND.muted};">
                 وبما إنك من الأوائل، باش تكون من أوّل الناس اللي يكتشفوا كل المزايا الجديدة وقت الإطلاق.
@@ -146,7 +143,7 @@ function buildHtml(name: string | null | undefined, logoSrc: string): string {
             <td style="padding:4px 32px 32px 32px;" align="right">
               <p style="margin:0;font-family:${FONT_STACK};font-size:15px;line-height:1.9;color:${BRAND.muted};">
                 يعطيك الصحة على ثقتك ❤️<br/>
-                <strong style="color:${BRAND.ink};">فريق ELMADHI</strong>
+                <strong style="color:${BRAND.ink};">فريق HYPE FITNESS</strong>
               </p>
             </td>
           </tr>
@@ -155,7 +152,7 @@ function buildHtml(name: string | null | undefined, logoSrc: string): string {
             <td align="center" style="padding:20px 32px;border-top:1px solid ${BRAND.hairline};">
               <p style="margin:0;font-family:${FONT_STACK};font-size:12px;line-height:1.8;color:${BRAND.muted};">
                 إفهم جسمك. إبني نظامك. وولّي الكوتش متاع روحك.<br/>
-                © ELMADHI
+                © HYPE FITNESS
               </p>
             </td>
           </tr>
@@ -170,20 +167,20 @@ function buildHtml(name: string | null | undefined, logoSrc: string): string {
 function buildText(name?: string | null): string {
   const greeting = name && name.trim() ? `أهلا ${name.trim()} 👋` : "أهلا بيك 👋";
   return [
-    "مبروك! 🎉 إنت رسميًا من الأوائل في ELMADHI",
+    "مبروك! 🎉 إنت رسميًا من الأوائل في HYPE FITNESS",
     "",
     greeting,
     "",
-    "حجزت بلاصتك في ELMADHI، وإنت من أوّل الناس اللي باش يجرّبوا المنصة قبل الإطلاق الرسمي.",
+    "حجزت بلاصتك في HYPE FITNESS، وإنت من أوّل الناس اللي باش يجرّبوا المنصة قبل الإطلاق الرسمي.",
     "",
-    "ELMADHI ما تعطيكش مجرد برنامج تمشي عليه. تعطيك المعرفة اللي تخليك تفهم جسمك، تختار أكلك بذكاء، تتمرّن بالطريقة الصحيحة، ومع الوقت معادش تحتاج حد يقولك شتعمل.",
+    "HYPE FITNESS ما تعطيكش مجرد برنامج تمشي عليه. تعطيك المعرفة اللي تخليك تفهم جسمك، تختار أكلك بذكاء، تتمرّن بالطريقة الصحيحة، ومع الوقت معادش تحتاج حد يقولك شتعمل.",
     "",
     "وبما إنك من الأوائل، باش تكون من أوّل الناس اللي يكتشفوا كل المزايا الجديدة وقت الإطلاق.",
     "",
     "📩 أول ما تفتح المنصة، نبعثولك إيميل مباشرة، وتلقى نتيجة التقييم والخطة متاعك تستنّاك من أول دخول.",
     "",
     "يعطيك الصحة على ثقتك ❤️",
-    "فريق ELMADHI",
+    "فريق HYPE FITNESS",
   ].join("\n");
 }
 
@@ -209,7 +206,7 @@ export async function sendWelcomeEmail(
 
   try {
     await transporter.sendMail({
-      from: `ELMADHI team <${process.env.GMAIL_USER}>`,
+      from: `HYPE FITNESS team <${process.env.GMAIL_USER}>`,
       to,
       subject: SUBJECT,
       text: buildText(name),

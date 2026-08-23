@@ -6,11 +6,25 @@
   :root {
     --bg: #0f0f0f;
     --surface: #202020;
-    --accent: #5dd62c;
-    --accent-hover: #337418;
+    --accent: #c0da1b;
+    --accent-hover: #7d8e10;
     --ink: #f8f8f8;
     --muted: rgba(248, 248, 248, 0.65);
     --hairline: rgba(255, 255, 255, 0.08);
+
+    /* Which face headings, buttons and nav labels use. */
+    --font-brand: var(--font-saira);
+  }
+
+  /*
+   * The Arabic side stays entirely on Cairo. Saira carries no Arabic, so relying
+   * on glyph fallback alone would still hand it every Latin run inside Arabic
+   * copy — the brand name, a number, a loanword — and those would render in a
+   * different face from the sentence around them. Swapping the variable keeps
+   * one typeface per locale instead.
+   */
+  html:lang(ar) {
+    --font-brand: var(--font-cairo);
   }
 
   * {
@@ -28,6 +42,39 @@
     text-rendering: optimizeLegibility;
   }
 
+  /*
+   * Headings and controls take the display face; body copy stays on Cairo.
+   *
+   * `button` is matched here rather than through the Button component because
+   * plenty of controls are hand-rolled elements that never go through it. A
+   * button carrying a sentence of body copy rather than a label can opt back
+   * out with `font-sans`.
+   */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  button {
+    font-family: theme("fontFamily.display");
+  }
+
+  /*
+   * Numbers stay Western in the Arabic UI: 250, never ٢٥٠.
+   *
+   * With lang="ar" a font is free to map 0-9 to Arabic-Indic digits through the
+   * `locl` feature. Cairo and Tajawal don't, but they load with `display: swap`
+   * — so every Arabic screen renders in a system fallback first, and the Arabic
+   * system fonts on iOS and Android do substitute. Prices, weights and the
+   * assessment's numbers would flicker into another numeral system for the
+   * first paint. Turning `locl` off pins the digits; Arabic letterforms are
+   * unaffected, they are shaped by `init`/`medi`/`fina`/`rlig`, not this.
+   */
+  :lang(ar) {
+    font-feature-settings: "locl" 0;
+  }
+
   /* Improve focus visibility for accessibility */
   :focus-visible {
     outline: 2px solid var(--accent);
@@ -35,7 +82,7 @@
   }
 
   ::selection {
-    background: rgba(93, 214, 44, 0.3);
+    background: rgba(192, 218, 27, 0.3);
     color: var(--ink);
   }
 }
@@ -46,12 +93,12 @@
     margin-inline: auto;
   }
 
-  /* Soft radial green glow used behind hero / accents */
+  /* Soft radial lime glow used behind hero / accents */
   .glow-accent {
     background: radial-gradient(
       60% 60% at 50% 40%,
-      rgba(93, 214, 44, 0.18) 0%,
-      rgba(93, 214, 44, 0) 70%
+      rgba(192, 218, 27, 0.18) 0%,
+      rgba(192, 218, 27, 0) 70%
     );
   }
 

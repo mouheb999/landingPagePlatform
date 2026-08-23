@@ -26,7 +26,7 @@ export async function notifyNewSignup(
   const numberTag = seq ? ` #${seq}` : "";
   const header = duplicate
     ? `🔁 Repeat signup${seq ? ` (already${numberTag})` : ""}`
-    : `🎉 New ELMADHI waitlist signup${numberTag}`;
+    : `🎉 New HYPE FITNESS waitlist signup${numberTag}`;
 
   const lines: (string | null)[] = [
     header,

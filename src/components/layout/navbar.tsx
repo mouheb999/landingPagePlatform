@@ -46,8 +46,8 @@ export function Navbar() {
       )}
     >
       <nav className="container-page flex min-h-[76px] items-center justify-between gap-6">
-        <a href="#top" aria-label="ELMADHI">
-          <Logo />
+        <a href="#top" aria-label="HYPE FITNESS">
+          <Logo className="h-11 w-auto" />
         </a>
 
         {/* Desktop links */}

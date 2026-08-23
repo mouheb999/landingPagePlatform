@@ -13,7 +13,7 @@ interface MediaCardProps {
 
 const variantBg: Record<NonNullable<MediaCardProps["variant"]>, string> = {
   default: "bg-[linear-gradient(145deg,#2a2a2a,#141414)]",
-  accent: "bg-[linear-gradient(145deg,rgba(93,214,44,0.35),rgba(51,116,24,0.5))]",
+  accent: "bg-[linear-gradient(145deg,rgba(192,218,27,0.35),rgba(125,142,16,0.5))]",
   cool: "bg-[linear-gradient(145deg,#23323d,#141d24)]",
 };
 

@@ -13,7 +13,7 @@ export default function GlobalNotFound() {
               href="/"
               className="mt-8 inline-flex h-14 items-center rounded-full bg-accent px-7 font-bold text-bg"
             >
-              ELMADHI
+              HYPE FITNESS
             </a>
           </div>
         </main>

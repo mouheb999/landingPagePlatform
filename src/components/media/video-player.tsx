@@ -50,7 +50,7 @@ export function VideoPlayer({
           <iframe
             className="h-full w-full"
             src={`https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
-            title={label ?? "ELMADHI video"}
+            title={label ?? "HYPE FITNESS video"}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
@@ -91,7 +91,7 @@ export function VideoPlayer({
               }}
             />
           ) : (
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(93,214,44,0.18),transparent_60%),linear-gradient(150deg,#1a1a1a,#0f0f0f)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(192,218,27,0.18),transparent_60%),linear-gradient(150deg,#1a1a1a,#0f0f0f)]" />
           )}
 
           {/* subtle dark veil so the play button always reads clearly */}

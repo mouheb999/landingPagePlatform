@@ -1,9 +1,9 @@
 {
-  "brand": "ELMADHI",
+  "brand": "HYPE FITNESS",
   "metadata": {
-    "title": "ELMADHI — Understand Your Body. Coach Yourself.",
-    "description": "ELMADHI is an educational fitness platform that teaches you to understand your body and become your own coach: training, nutrition, and calories tailored to your goal and your life. Join the waitlist before launch.",
-    "ogTitle": "ELMADHI — Tired of paying a coach forever?",
+    "title": "HYPE FITNESS — Understand Your Body. Coach Yourself.",
+    "description": "HYPE FITNESS is an educational fitness platform that teaches you to understand your body and become your own coach: training, nutrition, and calories tailored to your goal and your life. Join the waitlist before launch.",
+    "ogTitle": "HYPE FITNESS — Tired of paying a coach forever?",
     "ogDescription": "Learn to understand your body and coach yourself. A premium educational fitness platform. Join the waitlist."
   },
   "nav": {
@@ -22,7 +22,7 @@
   "hero": {
     "eyebrow": "Understand Your Body • Coach Yourself",
     "title": "Tired of paying a coach for the rest of your life?",
-    "copy": "With ELMADHI you become your own coach. Understand what your body needs, how to train, and what to eat — based on your goal, your life, and your schedule. Simple, with zero complexity.",
+    "copy": "With HYPE FITNESS you become your own coach. Understand what your body needs, how to train, and what to eat — based on your goal, your life, and your schedule. Simple, with zero complexity.",
     "primaryCta": "Join the Waitlist",
     "secondaryCta": "See How the Platform Works",
     "assessmentCta": "Discover What Your Body Needs — Free",
@@ -44,7 +44,7 @@
   "solution": {
     "kicker": "The Solution",
     "title": "The solution isn't another program… it's understanding your body",
-    "paragraphOne": "ELMADHI asks about your body, your goal, your time, and your life — then gives you the path that fits you.",
+    "paragraphOne": "HYPE FITNESS asks about your body, your goal, your time, and your life — then gives you the path that fits you.",
     "paragraphTwo": "You won't just follow blindly… you'll understand and decide for yourself.",
     "checks": [
       "The right goal for you",
@@ -55,7 +55,7 @@
     ]
   },
   "inside": {
-    "kicker": "Inside ELMADHI",
+    "kicker": "Inside HYPE FITNESS",
     "title": "Every tool you need, in one place",
     "subtitle": "Man or woman, gym or home — the platform adapts to you.",
     "features": [
@@ -108,7 +108,7 @@
   },
   "story": {
     "kicker": "A real journey",
-    "title": "Behind ELMADHI is a real journey",
+    "title": "Behind HYPE FITNESS is a real journey",
     "paragraphOne": "I started sport in 2011, trained 8 years of Taekwondo and earned the black belt. Then I moved to the gym and built my body naturally, step by step, without a coach.",
     "paragraphTwo": "Along the way I experimented, made mistakes, and learned. Today I won't tell you \"just do it like me\" — I want to give you the tools to find the approach that fits your body, your age, your goal, and your life.",
     "highlight": "You don't have to be a pro athlete… you just need to know where to start.",
@@ -125,7 +125,7 @@
   "waitlist": {
     "kicker": "Coming soon",
     "headline": "Launch is coming 🚀",
-    "text": "ELMADHI is still in its first launch phase. Join the waitlist to be among the very first to try the platform and enjoy exclusive launch benefits.",
+    "text": "HYPE FITNESS is still in its first launch phase. Join the waitlist to be among the very first to try the platform and enjoy exclusive launch benefits.",
     "benefitsTitle": "Launch benefits",
     "benefits": [
       "Personal assessment",
@@ -146,7 +146,7 @@
       "submit": "Join the Waitlist",
       "submitting": "Signing up…",
       "successTitle": "You're on the list 🎉",
-      "successText": "We'll notify you the moment ELMADHI launches.",
+      "successText": "We'll notify you the moment HYPE FITNESS launches.",
       "errors": {
         "name": "Please enter your name",
         "email": "Invalid email address",
@@ -157,7 +157,7 @@
     }
   },
   "assessment": {
-    "title": "ELMADHI Free Assessment",
+    "title": "HYPE FITNESS Free Assessment",
     "counter": "Question {current} of {total}",
     "next": "Next",
     "back": "Back",
@@ -251,7 +251,7 @@
       "submitting": "Signing up…",
       "done": "Close",
       "successTitle": "You're in 🔥",
-      "successText": "We saved you on the waitlist. The moment ELMADHI launches we'll message you on WhatsApp — and your result will be waiting the second you log in.",
+      "successText": "We saved you on the waitlist. The moment HYPE FITNESS launches we'll message you on WhatsApp — and your result will be waiting the second you log in.",
       "errors": { "generic": "Something went wrong, please try again" }
     }
   },

@@ -9,7 +9,7 @@ export async function JsonLd({ locale }: { locale: Locale }) {
   const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "ELMADHI",
+    name: "HYPE FITNESS",
     url: SITE_URL,
     description: tm("description"),
     logo: `${SITE_URL}/og-image.png`,

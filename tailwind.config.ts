@@ -16,8 +16,8 @@ const config: Config = {
         bg: "#0F0F0F",
         surface: "#202020",
         accent: {
-          DEFAULT: "#5DD62C",
-          hover: "#337418",
+          DEFAULT: "#C0DA1B",
+          hover: "#7D8E10",
         },
         ink: "#F8F8F8",
         muted: "rgba(248,248,248,0.65)",
@@ -25,17 +25,25 @@ const config: Config = {
         border: "rgba(255,255,255,0.08)",
         background: "#0F0F0F",
         foreground: "#F8F8F8",
-        ring: "#5DD62C",
+        ring: "#C0DA1B",
       },
       fontFamily: {
         sans: ["var(--font-cairo)", "Cairo", "Tajawal", "system-ui", "sans-serif"],
+        // --font-brand is Saira in English and Cairo in Arabic; see globals.css.
+        display: [
+          "var(--font-brand)",
+          "var(--font-cairo)",
+          "Cairo",
+          "system-ui",
+          "sans-serif",
+        ],
       },
       borderRadius: {
         card: "28px",
       },
       boxShadow: {
         card: "0 10px 40px rgba(0,0,0,0.35)",
-        glow: "0 0 80px rgba(93,214,44,0.25)",
+        glow: "0 0 80px rgba(192,218,27,0.25)",
       },
       keyframes: {
         "fade-up": {
