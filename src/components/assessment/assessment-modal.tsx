@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -13,8 +13,8 @@ import {
   Droplet,
   Flame,
   Gauge,
-  Loader2,
   Lock,
+  Rocket,
   Target,
   Wheat,
 } from "lucide-react";
@@ -25,11 +25,8 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { submitAssessment } from "@/actions/waitlist";
+import { JoinCta } from "@/components/cta/join-cta";
 import { computeAssessment } from "@/lib/assessment/calculator";
-import { GOAL_TO_WAITLIST } from "@/lib/assessment/mappers";
 import {
   ASSESSMENT_QUESTIONS,
   PREMIUM_FEATURES,
@@ -50,7 +47,7 @@ import type {
 
 type AnswerMap = Partial<Record<QuestionId, string | number>>;
 type TranslatedQuestion = { q: string; options: string[] };
-type Phase = "quiz" | "result" | "form" | "success";
+type Phase = "quiz" | "result";
 
 interface AssessmentModalProps {
   open: boolean;
@@ -81,16 +78,12 @@ export function AssessmentModal({ open, onOpenChange }: AssessmentModalProps) {
   const [phase, setPhase] = useState<Phase>("quiz");
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<AnswerMap>({});
-  const [finalAnswers, setFinalAnswers] = useState<AssessmentAnswers | null>(
-    null
-  );
   const [result, setResult] = useState<AssessmentResult | null>(null);
 
   const reset = () => {
     setPhase("quiz");
     setStep(0);
     setAnswers({});
-    setFinalAnswers(null);
     setResult(null);
   };
 
@@ -107,9 +100,7 @@ export function AssessmentModal({ open, onOpenChange }: AssessmentModalProps) {
     if (step < TOTAL_QUESTIONS - 1) {
       setStep((s) => s + 1);
     } else {
-      const built = assemble(next);
-      setFinalAnswers(built);
-      setResult(computeAssessment(built));
+      setResult(computeAssessment(assemble(next)));
       setPhase("result");
     }
   };
@@ -156,28 +147,8 @@ export function AssessmentModal({ open, onOpenChange }: AssessmentModalProps) {
             />
           )}
 
-          {phase === "result" && result && finalAnswers && (
-            <ResultView
-              key="result"
-              result={result}
-              onContinue={() => setPhase("form")}
-            />
-          )}
-
-          {phase === "form" && result && finalAnswers && (
-            <SignupForm
-              key="form"
-              result={result}
-              answers={finalAnswers}
-              onSuccess={() => setPhase("success")}
-            />
-          )}
-
-          {phase === "success" && (
-            <SuccessView
-              key="success"
-              onClose={() => handleOpenChange(false)}
-            />
+          {phase === "result" && result && (
+            <ResultView key="result" result={result} />
           )}
         </AnimatePresence>
       </DialogContent>
@@ -361,13 +332,7 @@ function Silhouette({ level, active }: { level: number; active: boolean }) {
 // ---------------------------------------------------------------------------
 // Result dashboard
 // ---------------------------------------------------------------------------
-function ResultView({
-  result,
-  onContinue,
-}: {
-  result: AssessmentResult;
-  onContinue: () => void;
-}) {
+function ResultView({ result }: { result: AssessmentResult }) {
   const t = useTranslations("assessment.result");
   const tp = useTranslations("assessment.premium");
 
@@ -486,10 +451,18 @@ function ResultView({
         </div>
       </div>
 
-      <Button className="mt-6 w-full" size="lg" onClick={onContinue}>
+      {/* The end of the quiz used to be a name / email / WhatsApp form that
+          put the visitor on a waitlist. There is no list any more — the
+          platform is live — so the result hands straight over to it. */}
+      {/* text-base until there is room for lg: the label is nowrap inside a
+          375px-wide modal, and the English string clips at the large size. */}
+      <JoinCta size="lg" flashy className="mt-6 w-full px-4 text-base sm:px-9 sm:text-lg">
+        <Rocket className="h-5 w-5" />
         {t("cta")}
-        <ChevronRight className="h-5 w-5 rtl:rotate-180" />
-      </Button>
+      </JoinCta>
+      <p className="mt-3 text-center text-xs font-bold text-muted">
+        {t("ctaNote")}
+      </p>
     </motion.div>
   );
 }
@@ -532,163 +505,5 @@ function StatCard({
         )}
       </p>
     </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Signup form (rich payload — auto-fills the computed snapshot)
-// ---------------------------------------------------------------------------
-function SignupForm({
-  result,
-  answers,
-  onSuccess,
-}: {
-  result: AssessmentResult;
-  answers: AssessmentAnswers;
-  onSuccess: () => void;
-}) {
-  const t = useTranslations("assessment.form");
-  const [isPending, startTransition] = useTransition();
-  const [error, setError] = useState<string | null>(null);
-
-  function action(formData: FormData) {
-    setError(null);
-    startTransition(async () => {
-      const res = await submitAssessment(formData);
-      if (res.status === "success") onSuccess();
-      else setError(t("errors.generic"));
-    });
-  }
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: 24 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -24 }}
-      transition={{ duration: 0.35, ease: EASE }}
-      className="mt-6"
-    >
-      <h3 className="text-2xl font-extrabold leading-snug">{t("title")}</h3>
-      <p className="mt-2 text-sm text-muted">{t("subtitle")}</p>
-
-      <form action={action} className="mt-6 grid gap-4">
-        {/* Honeypot: hidden from humans; bots that fill it are silently dropped. */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-[9999px] h-px w-px overflow-hidden opacity-0"
-        >
-          <label htmlFor="as-company-url">Company website</label>
-          <input
-            id="as-company-url"
-            type="text"
-            name="company_url"
-            tabIndex={-1}
-            autoComplete="off"
-          />
-        </div>
-
-        {/* Auto-populated snapshot — the user never edits these. */}
-        <input type="hidden" name="goal" value={GOAL_TO_WAITLIST[answers.goal]} />
-        <input type="hidden" name="gender" value={answers.gender} />
-        <input type="hidden" name="age" value={answers.age} />
-        <input type="hidden" name="height" value={answers.height} />
-        <input type="hidden" name="weight" value={answers.weight} />
-        <input type="hidden" name="activity" value={answers.activity} />
-        <input type="hidden" name="experience" value={answers.experience} />
-        <input type="hidden" name="bodyType" value={answers.bodyType} />
-        <input type="hidden" name="strategy" value={result.strategy} />
-        <input
-          type="hidden"
-          name="maintenanceCalories"
-          value={result.maintenanceCalories}
-        />
-        <input type="hidden" name="targetCalories" value={result.targetCalories} />
-        <input type="hidden" name="protein" value={result.macros.protein} />
-        <input type="hidden" name="carbs" value={result.macros.carbs} />
-        <input type="hidden" name="fat" value={result.macros.fat} />
-        <input type="hidden" name="timelineWeeks" value={result.timelineWeeks} />
-        <input type="hidden" name="bmr" value={result.bmr} />
-        <input type="hidden" name="tdee" value={result.tdee} />
-        <input type="hidden" name="bmi" value={result.bmi} />
-
-        <div className="grid gap-2">
-          <Label htmlFor="as-name">{t("fullName")}</Label>
-          <Input
-            id="as-name"
-            name="fullName"
-            required
-            autoComplete="name"
-            placeholder={t("fullNamePlaceholder")}
-          />
-        </div>
-
-        <div className="grid gap-2">
-          <Label htmlFor="as-email">{t("email")}</Label>
-          <Input
-            id="as-email"
-            name="email"
-            type="email"
-            required
-            inputMode="email"
-            autoComplete="email"
-            placeholder={t("emailPlaceholder")}
-          />
-        </div>
-
-        <div className="grid gap-2">
-          <Label htmlFor="as-whatsapp">{t("whatsapp")}</Label>
-          <Input
-            id="as-whatsapp"
-            name="whatsapp"
-            type="tel"
-            required
-            inputMode="tel"
-            autoComplete="tel"
-            placeholder={t("whatsappPlaceholder")}
-          />
-        </div>
-
-        {error && (
-          <p className="text-sm font-bold text-red-400" role="alert">
-            {error}
-          </p>
-        )}
-
-        <Button type="submit" size="lg" disabled={isPending} className="w-full">
-          {isPending ? (
-            <>
-              <Loader2 className="h-5 w-5 animate-spin" />
-              {t("submitting")}
-            </>
-          ) : (
-            t("submit")
-          )}
-        </Button>
-      </form>
-    </motion.div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Success
-// ---------------------------------------------------------------------------
-function SuccessView({ onClose }: { onClose: () => void }) {
-  const t = useTranslations("assessment.form");
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.96 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.45, ease: EASE }}
-      className="mt-6 flex flex-col items-center justify-center py-6 text-center"
-      role="status"
-      aria-live="polite"
-    >
-      <CheckCircle2 className="h-16 w-16 text-accent" strokeWidth={1.5} />
-      <h3 className="mt-4 text-2xl font-extrabold">{t("successTitle")}</h3>
-      <p className="mt-3 max-w-sm text-muted">{t("successText")}</p>
-      <Button variant="secondary" className="mt-6" onClick={onClose}>
-        {t("done")}
-      </Button>
-    </motion.div>
   );
 }

@@ -7,6 +7,8 @@ import { JOIN_URL } from "@/lib/platform";
 type JoinCtaProps = VariantProps<typeof buttonVariants> & {
   children: ReactNode;
   className?: string;
+  /** Sweeping shine + breathing glow. For the one CTA on a screen that matters. */
+  flashy?: boolean;
 };
 
 /**
@@ -19,10 +21,20 @@ type JoinCtaProps = VariantProps<typeof buttonVariants> & {
  *
  * Same tab on purpose: this is a handover, not a detour.
  */
-export function JoinCta({ children, className, size, variant }: JoinCtaProps) {
+export function JoinCta({
+  children,
+  className,
+  size,
+  variant,
+  flashy,
+}: JoinCtaProps) {
   return (
-    <a href={JOIN_URL} className={cn(buttonVariants({ size, variant }), className)}>
-      {children}
+    <a
+      href={JOIN_URL}
+      className={cn(buttonVariants({ size, variant }), flashy && "cta-flashy", className)}
+    >
+      {/* Above the ::after shine, which sits at the element's own stacking level. */}
+      <span className="relative z-10 inline-flex items-center gap-2">{children}</span>
     </a>
   );
 }

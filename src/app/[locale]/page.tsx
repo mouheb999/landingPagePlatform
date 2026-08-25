@@ -7,7 +7,7 @@ import { Hero } from "@/components/sections/hero";
 import { Inside } from "@/components/sections/inside";
 import { Pricing } from "@/components/sections/pricing";
 import { Transformation } from "@/components/sections/transformation";
-import { Waitlist } from "@/components/sections/waitlist";
+import { Join } from "@/components/sections/join";
 
 export default async function HomePage({
   params,
@@ -25,13 +25,14 @@ export default async function HomePage({
             Problem, Solution and HowItWorks are still in
             src/components/sections/ with their copy intact — they were three
             more walls of text saying what the next section then showed, and
-            HowItWorks had a "join the waitlist" step that no longer exists.
+            HowItWorks' second step used to be "join the waitlist"; it now
+            points at the platform signup like every other CTA.
             Add the import and the tag back to restore any of them. */}
         <Hero />
         <Inside />
         <Transformation />
         <Pricing />
-        <Waitlist />
+        <Join />
       </main>
       <Footer />
       <MobileCta />

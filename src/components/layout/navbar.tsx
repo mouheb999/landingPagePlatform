@@ -13,7 +13,7 @@ import { JoinCta } from "@/components/cta/join-cta";
 const LINKS = [
   { id: "inside", key: "inside" },
   { id: "story", key: "story" },
-  { id: "waitlist", key: "waitlist" },
+  { id: "join", key: "join" },
 ] as const;
 
 export function Navbar() {

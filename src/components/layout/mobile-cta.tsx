@@ -7,17 +7,17 @@ import { JoinCta } from "@/components/cta/join-cta";
 /**
  * Bottom CTA shown on mobile only. It is NOT permanent: it stays hidden over the
  * hero (where the primary CTA already lives) and smoothly slides up once the user
- * scrolls past the hero. It hides again over the waitlist section so it never
- * duplicates or overlaps the form.
+ * scrolls past the hero. It hides again over the closing Join section so it
+ * never sits on top of the CTA that section already shows.
  */
 export function MobileCta() {
   const tc = useTranslations("common");
   const [pastHero, setPastHero] = useState(false);
-  const [atWaitlist, setAtWaitlist] = useState(false);
+  const [atJoin, setAtJoin] = useState(false);
 
   useEffect(() => {
     const hero = document.getElementById("top");
-    const waitlist = document.getElementById("waitlist");
+    const join = document.getElementById("join");
 
     const heroObserver = hero
       ? new IntersectionObserver(
@@ -28,21 +28,20 @@ export function MobileCta() {
       : null;
     if (hero && heroObserver) heroObserver.observe(hero);
 
-    const waitlistObserver = waitlist
-      ? new IntersectionObserver(
-          ([entry]) => setAtWaitlist(entry.isIntersecting),
-          { threshold: 0.15 }
-        )
+    const joinObserver = join
+      ? new IntersectionObserver(([entry]) => setAtJoin(entry.isIntersecting), {
+          threshold: 0.15,
+        })
       : null;
-    if (waitlist && waitlistObserver) waitlistObserver.observe(waitlist);
+    if (join && joinObserver) joinObserver.observe(join);
 
     return () => {
       heroObserver?.disconnect();
-      waitlistObserver?.disconnect();
+      joinObserver?.disconnect();
     };
   }, []);
 
-  const visible = pastHero && !atWaitlist;
+  const visible = pastHero && !atJoin;
 
   return (
     <div

@@ -2,15 +2,15 @@
   "brand": "HYPE FITNESS",
   "metadata": {
     "title": "HYPE FITNESS — Understand Your Body. Coach Yourself.",
-    "description": "HYPE FITNESS is an educational fitness platform that teaches you to understand your body and become your own coach: training, nutrition, and calories tailored to your goal and your life. Join the waitlist before launch.",
+    "description": "HYPE FITNESS is an educational fitness platform that teaches you to understand your body and become your own coach: training, nutrition, and calories tailored to your goal and your life. Join the platform and start your program today.",
     "ogTitle": "HYPE FITNESS — Tired of paying a coach forever?",
-    "ogDescription": "Learn to understand your body and coach yourself. A premium educational fitness platform. Join the waitlist."
+    "ogDescription": "Learn to understand your body and coach yourself. A premium educational fitness platform, open now."
   },
   "nav": {
     "problem": "The Problem",
     "inside": "Inside the Platform",
     "story": "The Story",
-    "waitlist": "Join us",
+    "join": "Join us",
     "menu": "Menu",
     "language": "Language"
   },
@@ -70,7 +70,7 @@
     "title": "From the first question to your first plan… the path is clear",
     "steps": [
       { "title": "The free assessment", "desc": "We define your body goal, calories, and macros." },
-      { "title": "Join the waitlist", "desc": "Sign up with your email to be among the first at launch." },
+      { "title": "Create your account", "desc": "Sign up on the platform and open your program in a minute." },
       { "title": "Complete the assessment", "desc": "Your body, experience, time, food, and equipment." },
       { "title": "Progress and adjust", "desc": "A new check-in and the platform updates your program." }
     ]
@@ -109,7 +109,7 @@
   "story": {
     "kicker": "A real journey",
     "title": "Behind HYPE FITNESS is a real journey",
-    "paragraphOne": "I started sport in 2011, trained 8 years of Taekwondo and earned the black belt. Then I moved to the gym and built my body naturally, step by step, without a coach.",
+    "paragraphOne": "I'm Elmadhi — an athlete since I was a kid. My journey started in 2011: eight years of Taekwondo, up to the black belt. Then I moved to the gym and built my body naturally, step by step, without a coach.",
     "paragraphTwo": "Along the way I experimented, made mistakes, and learned. Today I won't tell you \"just do it like me\" — I want to give you the tools to find the approach that fits your body, your age, your goal, and your life.",
     "highlight": "You don't have to be a pro athlete… you just need to know where to start.",
     "media": {
@@ -122,39 +122,10 @@
       "videoLabel": "Watch the transformation video"
     }
   },
-  "waitlist": {
+  "join": {
     "kicker": "Open now",
     "headline": "Your plan is waiting 🚀",
-    "text": "HYPE FITNESS is live. Join us and start with a plan built around your body, your schedule and your goal.",
-    "benefitsTitle": "Launch benefits",
-    "benefits": [
-      "Personal assessment",
-      "Gym or home workout",
-      "Diet + calories + macros",
-      "Plan adjustments",
-      "Weekly Q&A",
-      "Women-focused content",
-      "10 personal questions"
-    ],
-    "form": {
-      "name": "Name",
-      "namePlaceholder": "Enter your name",
-      "email": "Email",
-      "emailPlaceholder": "example@email.com",
-      "whatsapp": "WhatsApp number",
-      "whatsappPlaceholder": "+216 ...",
-      "submit": "Join the Waitlist",
-      "submitting": "Signing up…",
-      "successTitle": "You're on the list 🎉",
-      "successText": "We'll notify you the moment HYPE FITNESS launches.",
-      "errors": {
-        "name": "Please enter your name",
-        "email": "Invalid email address",
-        "gender": "Select a gender",
-        "goal": "Choose your goal",
-        "generic": "Something went wrong, please try again"
-      }
-    }
+    "text": "HYPE FITNESS is live. Join us and start with a plan built around your body, your schedule and your goal."
   },
   "assessment": {
     "title": "HYPE FITNESS Free Assessment",
@@ -224,7 +195,8 @@
         "recomp": "Your best move is a body recomposition: eat around {target} kcal with {protein}g of protein, train hard, and build muscle while losing fat over about {timeline}.",
         "maintenance": "You're in a good spot. Eat around {target} kcal a day with {protein}g of protein to maintain and feel your best."
       },
-      "cta": "🚀 Join the Waitlist"
+      "cta": "Start Now on the Platform",
+      "ctaNote": "Free to start — one minute and your plan is in front of you."
     },
     "premium": {
       "title": "Unlocked in the full platform",
@@ -237,22 +209,6 @@
         "food_logger": "AI food logger",
         "coaching": "Weekly coaching"
       }
-    },
-    "form": {
-      "title": "Almost there",
-      "subtitle": "Join the waitlist and we'll save your result for launch.",
-      "fullName": "Full name",
-      "fullNamePlaceholder": "Your full name",
-      "email": "Email",
-      "emailPlaceholder": "example@email.com",
-      "whatsapp": "WhatsApp number",
-      "whatsappPlaceholder": "+216 ...",
-      "submit": "🚀 Join the Waitlist",
-      "submitting": "Signing up…",
-      "done": "Close",
-      "successTitle": "You're in 🔥",
-      "successText": "We saved you on the waitlist. The moment HYPE FITNESS launches we'll message you on WhatsApp — and your result will be waiting the second you log in.",
-      "errors": { "generic": "Something went wrong, please try again" }
     }
   },
   "footer": {

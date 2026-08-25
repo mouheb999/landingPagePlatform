@@ -102,6 +102,58 @@
     );
   }
 
+  /* The one outbound CTA, dressed up.
+     A lime button already reads as "primary"; this makes it read as "the door".
+     A sweeping highlight crosses it every few seconds and the glow behind it
+     breathes, so the eye comes back to it after reading the result above.
+     Both animations are decorative — the global prefers-reduced-motion rule
+     below stops them dead for anyone who asked for that. */
+  .cta-flashy {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    animation: cta-breathe 2.8s ease-in-out infinite;
+  }
+
+  /* The travelling shine. inset-0 + translateX keeps it inside the pill;
+     `pointer-events: none` so it never eats the click. */
+  .cta-flashy::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      100deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    animation: cta-shine 3.2s ease-in-out infinite;
+  }
+
+  @keyframes cta-shine {
+    0% {
+      transform: translateX(-100%);
+    }
+    55%,
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes cta-breathe {
+    0%,
+    100% {
+      box-shadow: 0 10px 28px rgba(192, 218, 27, 0.25),
+        0 0 0 0 rgba(192, 218, 27, 0.45);
+    }
+    50% {
+      box-shadow: 0 10px 34px rgba(192, 218, 27, 0.4),
+        0 0 0 10px rgba(192, 218, 27, 0);
+    }
+  }
+
   .surface-card {
     background-color: var(--surface);
     border: 1px solid var(--hairline);
