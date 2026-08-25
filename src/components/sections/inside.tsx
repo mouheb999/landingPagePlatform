@@ -1,18 +1,21 @@
 import { getTranslations } from "next-intl/server";
-import {
-  Activity,
-  Dumbbell,
-  Salad,
-  HelpCircle,
-  type LucideIcon,
-} from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
-
-const ICONS: LucideIcon[] = [Activity, Dumbbell, Salad, HelpCircle];
+import { InsideShowcase } from "./inside-showcase";
 
 type Feature = { title: string; desc: string };
 
+/**
+ * "Inside ELMADHI" — four claims about the product, next to the product.
+ *
+ * This was four icon cards and nothing else, which asked a visitor to take the
+ * whole thing on description. The claims are unchanged and still come from the
+ * same `inside.features` copy; what is new is that picking one shows the screen
+ * it is talking about. Showing the app is the argument.
+ *
+ * The showcase is a Client Component because it animates and responds to taps,
+ * so the copy is read here on the server and handed down as plain data.
+ */
 export async function Inside() {
   const t = await getTranslations("inside");
   const features = t.raw("features") as Feature[];
@@ -26,27 +29,9 @@ export async function Inside() {
           subtitle={t("subtitle")}
         />
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, i) => {
-            const Icon = ICONS[i] ?? Activity;
-            return (
-              <Reveal
-                key={i}
-                as="article"
-                delay={(i % 4) * 0.08}
-                className="surface-card group p-6 transition-transform duration-300 hover:-translate-y-1.5"
-              >
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-accent/10 text-accent">
-                  <Icon className="h-6 w-6" strokeWidth={2} />
-                </span>
-                <h3 className="mt-5 text-lg font-extrabold">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {feature.desc}
-                </p>
-              </Reveal>
-            );
-          })}
-        </div>
+        <Reveal>
+          <InsideShowcase features={features} />
+        </Reveal>
       </div>
     </section>
   );
