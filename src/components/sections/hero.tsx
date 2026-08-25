@@ -41,7 +41,7 @@ export async function Hero() {
               {t("primaryCta")}
             </a>
             <a
-              href="#how"
+              href="#inside"
               className={cn(buttonVariants({ variant: "secondary", size: "lg" }))}
             >
               {t("secondaryCta")}

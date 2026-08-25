@@ -11,7 +11,6 @@ import { useAssessment } from "@/components/assessment/assessment-context";
 import { JoinCta } from "@/components/cta/join-cta";
 
 const LINKS = [
-  { id: "problem", key: "problem" },
   { id: "inside", key: "inside" },
   { id: "story", key: "story" },
   { id: "waitlist", key: "waitlist" },
