@@ -9,7 +9,7 @@ export default async function NotFound() {
       <div>
         <p className="text-6xl font-extrabold text-accent">404</p>
         <a href="/" className={cn(buttonVariants(), "mt-8")}>
-          {t("joinWaitlist")}
+          {t("joinUs")}
         </a>
       </div>
     </main>

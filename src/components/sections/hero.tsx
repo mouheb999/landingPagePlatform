@@ -5,6 +5,7 @@ import { VideoPlayer } from "@/components/media/video-player";
 import { Reveal } from "@/components/ui/reveal";
 import { AssessmentTrigger } from "@/components/assessment/assessment-trigger";
 import { cn } from "@/lib/utils";
+import { JOIN_URL } from "@/lib/platform";
 
 export async function Hero() {
   const t = await getTranslations("hero");
@@ -36,7 +37,7 @@ export async function Hero() {
 
         <Reveal delay={0.25} className="mt-10 flex w-full max-w-3xl flex-col items-center">
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
-            <a href="#waitlist" className={cn(buttonVariants({ size: "lg" }))}>
+            <a href={JOIN_URL} className={cn(buttonVariants({ size: "lg" }))}>
               {t("primaryCta")}
             </a>
             <a

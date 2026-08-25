@@ -10,12 +10,12 @@
     "problem": "The Problem",
     "inside": "Inside the Platform",
     "story": "The Story",
-    "waitlist": "Waitlist",
+    "waitlist": "Join us",
     "menu": "Menu",
     "language": "Language"
   },
   "common": {
-    "joinWaitlist": "Join the Waitlist",
+    "joinUs": "Join us",
     "bookSpot": "Reserve Your Spot Before Launch",
     "freeAssessment": "Discover Your Body — Free"
   },
@@ -23,7 +23,7 @@
     "eyebrow": "Understand Your Body • Coach Yourself",
     "title": "Tired of paying a coach for the rest of your life?",
     "copy": "With HYPE FITNESS you become your own coach. Understand what your body needs, how to train, and what to eat — based on your goal, your life, and your schedule. Simple, with zero complexity.",
-    "primaryCta": "Join the Waitlist",
+    "primaryCta": "Join us",
     "secondaryCta": "See How the Platform Works",
     "assessmentCta": "Discover What Your Body Needs — Free",
     "badgeOne": "A program built for you",
@@ -123,9 +123,9 @@
     }
   },
   "waitlist": {
-    "kicker": "Coming soon",
-    "headline": "Launch is coming 🚀",
-    "text": "HYPE FITNESS is still in its first launch phase. Join the waitlist to be among the very first to try the platform and enjoy exclusive launch benefits.",
+    "kicker": "Open now",
+    "headline": "Your plan is waiting 🚀",
+    "text": "HYPE FITNESS is live. Join us and start with a plan built around your body, your schedule and your goal.",
     "benefitsTitle": "Launch benefits",
     "benefits": [
       "Personal assessment",

@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
-import { scrollToWaitlist } from "@/lib/scroll";
+import { JoinCta } from "@/components/cta/join-cta";
 
 /**
  * Bottom CTA shown on mobile only. It is NOT permanent: it stays hidden over the
@@ -53,9 +52,7 @@ export function MobileCta() {
           : "pointer-events-none translate-y-24 opacity-0"
       }`}
     >
-      <Button onClick={scrollToWaitlist} className="w-full shadow-glow">
-        {tc("joinWaitlist")}
-      </Button>
+      <JoinCta className="w-full shadow-glow">{tc("joinUs")}</JoinCta>
     </div>
   );
 }

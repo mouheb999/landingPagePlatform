@@ -1,9 +1,15 @@
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/reveal";
-import { WaitlistForm } from "@/components/waitlist/waitlist-form";
+import { JoinCta } from "@/components/cta/join-cta";
 
+/**
+ * The closing block. Keeps the id `waitlist` — the sticky mobile bar watches
+ * for it to know when to get out of the way, and the nav anchors point at it —
+ * but there is no list to join any more. The platform is open; this is the door.
+ */
 export async function Waitlist() {
   const t = await getTranslations("waitlist");
+  const tc = await getTranslations("common");
 
   return (
     <section id="waitlist" className="scroll-mt-24 py-20 sm:py-28">
@@ -17,9 +23,9 @@ export async function Waitlist() {
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-muted">{t("text")}</p>
 
-          <div className="mt-8 rounded-[28px] border border-white/10 bg-bg/50 p-6 text-start sm:p-8">
-            <WaitlistForm />
-          </div>
+          <JoinCta size="lg" className="mt-8 w-full shadow-glow sm:w-auto sm:px-12">
+            {tc("joinUs")}
+          </JoinCta>
         </Reveal>
       </div>
     </section>

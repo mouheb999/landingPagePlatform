@@ -1,4 +1,4 @@
-# App screenshots for the "Inside ELMADHI" section
+# App screenshots for the "Inside HYPE FITNESS" section
 
 Drop four PNGs here, named exactly:
 

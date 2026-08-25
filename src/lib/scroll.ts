@@ -3,4 +3,3 @@ export function scrollToId(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-export const scrollToWaitlist = () => scrollToId("waitlist");

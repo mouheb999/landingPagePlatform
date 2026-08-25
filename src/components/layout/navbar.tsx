@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "./language-switcher";
 import { Logo } from "./logo";
 import { useAssessment } from "@/components/assessment/assessment-context";
-import { scrollToWaitlist } from "@/lib/scroll";
+import { JoinCta } from "@/components/cta/join-cta";
 
 const LINKS = [
   { id: "problem", key: "problem" },
@@ -69,9 +69,7 @@ export function Navbar() {
           <Button variant="secondary" size="sm" onClick={open}>
             {tc("freeAssessment")}
           </Button>
-          <Button size="sm" onClick={scrollToWaitlist}>
-            {tc("joinWaitlist")}
-          </Button>
+          <JoinCta size="sm">{tc("joinUs")}</JoinCta>
         </div>
 
         {/* Mobile toggle */}
@@ -113,14 +111,7 @@ export function Navbar() {
             >
               {tc("freeAssessment")}
             </Button>
-            <Button
-              onClick={() => {
-                setMenuOpen(false);
-                scrollToWaitlist();
-              }}
-            >
-              {tc("joinWaitlist")}
-            </Button>
+            <JoinCta className="w-full">{tc("joinUs")}</JoinCta>
           </div>
         </div>
       )}

@@ -3,7 +3,7 @@ import { Check, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { WaitlistCta } from "@/components/waitlist/waitlist-cta";
+import { JoinCta } from "@/components/cta/join-cta";
 
 type Plan = {
   name: string;
@@ -92,12 +92,12 @@ export async function Pricing() {
                   ))}
                 </ul>
 
-                <WaitlistCta
+                <JoinCta
                   variant={featured ? "primary" : "secondary"}
                   className="mt-8 w-full"
                 >
                   {t("cta")}
-                </WaitlistCta>
+                </JoinCta>
               </Reveal>
             );
           })}

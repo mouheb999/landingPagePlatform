@@ -6,7 +6,7 @@ import { InsideShowcase } from "./inside-showcase";
 type Feature = { title: string; desc: string };
 
 /**
- * "Inside ELMADHI" — four claims about the product, next to the product.
+ * "Inside HYPE FITNESS" — four claims about the product, next to the product.
  *
  * This was four icon cards and nothing else, which asked a visitor to take the
  * whole thing on description. The claims are unchanged and still come from the
