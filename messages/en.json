@@ -59,7 +59,7 @@
     "title": "Every tool you need, in one place",
     "subtitle": "Man or woman, gym or home — the platform adapts to you.",
     "features": [
-      { "title": "Full body analysis", "desc": "We understand your situation and goal before anything else." },
+      { "title": "AI calorie calculator", "desc": "Snap your plate — the AI estimates, you confirm." },
       { "title": "Custom workout plan", "desc": "Based on your level, your time, and your available equipment." },
       { "title": "Diet plan that fits your life", "desc": "Calories, macros, and food you can actually stick to." },
       { "title": "Q&A that keeps growing", "desc": "Clear, simple answers added every week." }

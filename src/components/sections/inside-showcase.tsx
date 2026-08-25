@@ -4,16 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
-  Activity,
   Dumbbell,
   HelpCircle,
   ImageIcon,
   Salad,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const ICONS: LucideIcon[] = [Activity, Dumbbell, Salad, HelpCircle];
+const ICONS: LucideIcon[] = [Sparkles, Dumbbell, Salad, HelpCircle];
 
 /**
  * One screenshot per feature, in the order the copy lists them.
@@ -27,7 +27,7 @@ const ICONS: LucideIcon[] = [Activity, Dumbbell, Salad, HelpCircle];
  * render ~286px wide, so 2x is plenty.
  */
 const SCREEN_SRC = [
-  "/screens/analysis.png",
+  "/screens/ai-calories.png",
   "/screens/workout.png",
   "/screens/diet.png",
   "/screens/qa.png",
@@ -95,7 +95,7 @@ export function InsideShowcase({ features }: { features: Feature[] }) {
         className="flex items-center gap-2 rounded-full border border-hairline bg-surface/70 p-1.5 backdrop-blur"
       >
         {features.map((feature, i) => {
-          const Icon = ICONS[i] ?? Activity;
+          const Icon = ICONS[i] ?? Sparkles;
           const isActive = i === active;
           return (
             <button

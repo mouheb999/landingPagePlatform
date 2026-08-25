@@ -2,12 +2,12 @@
 
 Drop four PNGs here, named exactly:
 
-| file           | screen to capture                          |
-|----------------|--------------------------------------------|
-| `analysis.png` | the questionnaire / plan rationale          |
-| `workout.png`  | the generated program                       |
-| `diet.png`     | the meal plan with macros                   |
-| `qa.png`       | the Q&A cards                               |
+| file              | screen to capture                       |
+|-------------------|-----------------------------------------|
+| `ai-calories.png` | the AI calorie calculator               |
+| `workout.png`     | the generated program                   |
+| `diet.png`        | the meal plan with macros               |
+| `qa.png`          | the Q&A cards                           |
 
 Shoot them on a phone (or a 390x844 browser viewport) with the status bar in
 frame. They render ~286px wide, so anything around 2x is plenty.
