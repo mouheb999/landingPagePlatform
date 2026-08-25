@@ -17,3 +17,6 @@ scripts/.welcome-sent.log
 
 # Editor / assistant local state
 .claude/
+
+# Local screenshot scratch — source captures, not for the site
+screens-old/
